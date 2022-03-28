@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">LoginLayout</string>
+    <string name="username">Username</string>
+    <string name="password">Password</string>
+    <string name="login_button">Login</string>
+    <string name="our_web_page">Our webpage</string>
+    <string name="admin">Admin</string>
+    <string name="capture_image">Capture image</string>
+    <string name="back">Back</string>
+</resources>
