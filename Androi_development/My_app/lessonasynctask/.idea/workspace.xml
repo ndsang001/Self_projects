@@ -14,6 +14,10 @@
   <component name="ChangeListManager">
     <list default="true" id="40f4e8a1-2d54-4d0f-a3ca-0ec83bb2a2f6" name="Default Changelist" comment="">
       <change afterPath="$PROJECT_DIR$/../Android_homework_web_operation/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Android_homework_web_operation/app/src/main/java/com/example/android_homework_web_operation/Route.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lessoncoroutines/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../LoginLayout/.gitignore" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../LoginLayout/.idea/.gitignore" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../LoginLayout/.idea/compiler.xml" beforeDir="false" />
@@ -101,7 +105,6 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="RunOnceActivity.cidr.known.project.marker" value="true" />
-    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="cidr.known.project.marker" value="true" />
     <property name="memory.settings.postsync.last.time.stamp" value="1652856888768" />
   </component>

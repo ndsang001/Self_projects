@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">LoginLayout</string>
+    <string name="username">Username</string>
+    <string name="password">Password</string>
+    <string name="login_button">Login</string>
+
+    <string name="our_web_page">Our webpage</string>
+    <string name="admin">Admin</string>
+    <string name="capture_image">Capture image</string>
+    <string name="back">Back</string>
+
+    <string name="preferences_filename">com.example.loginlayout.session</string>
+
+    <string name="user_admin">session_admin</string>
+    <string name="user_username">session_username</string>
+</resources>

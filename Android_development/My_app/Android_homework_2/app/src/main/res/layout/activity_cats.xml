@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        android:text="@string/cats_pressed"
+        android:textAlignment="center"
+        android:layout_marginTop="10dp"
+        android:textSize="50dp"
+        android:id="@+id/cats_text"/>
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/cats_text"
+        android:id="@+id/cats_list"
+        android:paddingTop="50dp"/>
+</androidx.constraintlayout.widget.ConstraintLayout>

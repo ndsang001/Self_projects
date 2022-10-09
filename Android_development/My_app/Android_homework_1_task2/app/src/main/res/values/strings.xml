@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Android_homework_1_task2</string>
+
+    <string name="first_button">First Button</string>
+    <string name="second_button">Second Button</string>
+    <string name="third_button">Third Button</string>
+    <string name="fourth_button">Fourth Button</string>
+</resources>

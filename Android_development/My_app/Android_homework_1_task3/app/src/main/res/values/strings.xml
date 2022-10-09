@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Android_homework_1_task3</string>
+    <string name="counter_text">20</string>
+    <string name="button">Click me</string>
+</resources>

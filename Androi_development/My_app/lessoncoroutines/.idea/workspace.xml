@@ -14,6 +14,18 @@
   <component name="ChangeListManager">
     <list default="true" id="a07afae9-e1ec-4195-9df2-6c8729513fc0" name="Default Changelist" comment="">
       <change afterPath="$PROJECT_DIR$/../Android_homework_web_operation/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Android_homework_web_operation/app/src/main/res/xml/network_security_config.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../androidprgrammingproject/app/src/main/java/com/example/androidprgrammingproject/Models.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../androidprgrammingproject/app/src/main/java/com/example/androidprgrammingproject/MyAdapter.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../androidprgrammingproject/app/src/main/res/layout/items_view.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lessonasynctask/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lessonasynctask/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../programmingproject/app/src/main/java/com/example/programmingproject/ApiService.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../programmingproject/app/src/main/java/com/example/programmingproject/PostModel.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../programmingproject/app/src/main/java/com/example/programmingproject/ServiceGenerator.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../programmingproject/app/src/main/res/layout/dog_list_view.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../programmingproject/app/src/main/res/xml/network_security_config.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../LoginLayout/.gitignore" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../LoginLayout/.idea/.gitignore" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../LoginLayout/.idea/compiler.xml" beforeDir="false" />
@@ -104,6 +116,9 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="cidr.known.project.marker" value="true" />
     <property name="memory.settings.postsync.last.time.stamp" value="1652941619072" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.17" />
+    <property name="project.structure.side.proportion" value="0.2" />
   </component>
   <component name="RunManager">
     <configuration name="app" type="AndroidRunConfigurationType" factoryName="Android App" activateToolWindowBeforeRun="false">
@@ -161,9 +176,7 @@
       <option name="ACTIVITY_CLASS" value="" />
       <option name="SEARCH_ACTIVITY_IN_GLOBAL_SCOPE" value="false" />
       <option name="SKIP_ACTIVITY_VALIDATION" value="false" />
-      <method v="2">
-        <option name="Android.Gradle.BeforeRunTask" enabled="true" />
-      </method>
+      <method v="2" />
     </configuration>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -187,5 +200,6 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
 </project>

@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Android_homework_2</string>
+
+    <string name="cats_button">Cats</string>
+    <string name="dogs_button">Dogs</string>
+    <string name="cats_pressed">Cat Breeds</string>
+    <string name="dogs_pressed">Dog Breeds</string>
+</resources>
