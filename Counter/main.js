@@ -1,6 +1,6 @@
 // The application has been guided by Tyler Potts' video
 // https://www.youtube.com/watch?v=RsR06orHWmw
-const actions = Array.from(document.querySelectorAll('[data-action'));
+const actions = Array.from(document.querySelectorAll('[data-action]'));
 
 
 let counter = localStorage.getItem('counter') || 0;
