@@ -19,7 +19,7 @@ import React, { Component } from 'react';
 class App extends Component {
     render() {
         return ( <
-            div className = "App" > < p > I will be back < /p> </div >
+            div className = "App" > <p> I will be back </p> </div >
 
         );
     }
