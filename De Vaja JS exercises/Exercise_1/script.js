@@ -1,10 +1,9 @@
+// The program can start after the page fully loaded
 window.addEventListener('load', () => {
 
     //variables declaration
     let i = 0;
     let tempName;
-    const min = Math.min()
-    const max = Math.max()
     let frontTurn = true;
 
     // array with ten names of birds
@@ -12,19 +11,9 @@ window.addEventListener('load', () => {
         "American Crow", "Carribean Dove", "Comb Duck", "Amur Falcon", "Chaffinch", "Bullfinch", "Greenfinch"
     ]
 
-    // create html content
-
+    // CREATE HTML CONTENT
     // select the display box
     const displayBox = document.querySelector(".display-box")
-        // select the html file for determining key pressing
-    const pressKey = document.querySelector("html");
-    console.log(pressKey);
-
-    function getClickedKey() {
-        pressKey.addEventListener("keydown", pressedKeyCheck);
-    }
-
-    getClickedKey();
 
     // create new class
     const nameBox = document.createElement('div');
@@ -34,13 +23,22 @@ window.addEventListener('load', () => {
     const birdNameBox = document.createElement('h1');
     birdNameBox.classList.add('bird-name-box');
 
+    // CREATE DISPLAY AND RUNNING FUNCTIONS
+    // select the html file for determining key pressing
+    const pressKey = document.querySelector("html");
+
+    // grant event listener to keydown function
+    function getClickedKey() {
+        pressKey.addEventListener("keydown", pressedKeyCheck);
+    }
+
+    getClickedKey();
+
     // display the bird's name on the screen
     function displayName(birdName) {
         birdNameBox.textContent = birdName;
         nameBox.appendChild(birdNameBox);
         displayBox.appendChild(nameBox);
-
-        //console.log(a)
     }
 
     // display function
@@ -51,24 +49,27 @@ window.addEventListener('load', () => {
         // check whether the name is displayed on the screen?
         if (birdNameBox.textContent == '') {
             displayName(birdName);
-
         }
-
     }
 
 
+    // check pressed key 
     function pressedKeyCheck(clickedKey) {
 
+        // assign current bird name to a temp name
         tempName = birdNameBox.textContent;
 
+        // check if the first or last letter is a space
         if (tempName[0] == " " || tempName[tempName.length - 1] == " ") {
             tempName = tempName.split(" ").join('');
         }
 
+        // check if game ends
         if (isNoLetter(tempName) && i == 9) {
             birdNameBox.textContent = "Thanks you for your time! Game END!"
         }
 
+        // check if no name on the screen
         if (tempName == '' || tempName == " ") {
             frontTurn = true;
             display(++i);
@@ -78,29 +79,26 @@ window.addEventListener('load', () => {
 
     }
 
+    // remove all occurances of pressed key
     function removeOccurances(clickedKey) {
-        console.log("day la key " + clickedKey.key)
+
+        // assign the clicked key to temp key
         let tempKey = clickedKey.key;
 
+        // if user needs to enter the first letter on the keyboard
         if (frontTurn) {
             if (tempKey.toLowerCase() == tempName[0].toLowerCase()) {
 
-                console.log("ok front");
-
+                // replace all the occurances of letter
                 tempName = tempName.split(tempKey.toUpperCase()).join('');
                 tempName = tempName.split(tempKey.toLowerCase()).join('');
                 birdNameBox.textContent = tempName;
 
-                // if (isUpperCase(tempName[0])) {
-                //     tempName = tempName.split(tempKey.toUpperCase()).join('');
-                //     birdNameBox.textContent = tempName;
-                // } else {
-                //     tempName = tempName.split(tempKey.toLowerCase()).join('');
-                //     birdNameBox.textContent = tempName;
-                // }
                 if (isNoLetter(tempName) && i != 9) {
                     alert("REMEMBER TO PRESS ANY KEY TO CONTINUE!")
                 }
+
+                // change state
                 return frontTurn = false;
             } else {
                 alert("Please enter the first letter of the word on the screen");
@@ -111,22 +109,15 @@ window.addEventListener('load', () => {
         } else {
             if (tempKey.toLowerCase() == tempName[tempName.length - 1].toLowerCase()) {
 
-                console.log("ok back");
+                // replace all the occurances of letter
                 tempName = tempName.split(tempKey.toUpperCase()).join('');
                 tempName = tempName.split(tempKey.toLowerCase()).join('');
                 birdNameBox.textContent = tempName;
 
-                // if (isUpperCase(tempName[tempName.length - 1])) {
-                //     tempName = tempName.split(tempKey.toUpperCase()).join('');
-                //     birdNameBox.textContent = tempName;
-                // } else {
-                //     console.log("toi o day")
-                //     tempName = tempName.split(tempKey.toLowerCase()).join('');
-                //     birdNameBox.textContent = tempName;
-                // }
                 if (isNoLetter(tempName) & i != 9) {
                     alert("REMEMBER TO PRESS ANY KEY TO CONTINUE!")
                 }
+                //change state
                 return frontTurn = true;
 
             } else {
