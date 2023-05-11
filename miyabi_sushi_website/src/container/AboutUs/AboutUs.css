@@ -1,0 +1,148 @@
+/* Adding style for About page */
+
+.app__about {
+    width: 100%;
+    height: 100%;
+    min-height: 100vh;
+    position: relative;
+}
+
+
+/* Adding style and position for the main content */
+
+.app__about-content {
+    position: relative;
+    width: 100%;
+    max-height: 100%;
+    min-height: 40vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+/* Adding style and position for photos  */
+
+.app__about-content_photo1 {
+    position: absolute;
+    right: 50%;
+    top: -10%;
+    width: 450px;
+    overflow: hidden;
+}
+
+.app__about-content_photo1 img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+}
+
+.app__about-content_photo2 {
+    position: absolute;
+    left: 50%;
+    width: 400px;
+    bottom: -70%;
+    overflow: hidden;
+    border: 10px solid var(--color-white);
+}
+
+.app__about-content_photo2 img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+}
+
+
+/* Adding style and position for information section */
+
+.app__about-content_text {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: column;
+    background-color: var(--color-white);
+    position: relative;
+    width: 600px;
+    height: auto;
+    padding: 3rem 0;
+}
+
+.app__about-content_text .p__dancing {
+    font-size: 30px;
+    color: var(--color-orange);
+}
+
+.app__about-content_text p {
+    inline-size: 80%;
+    text-align: center;
+}
+
+
+/* The style and size for diffent screen dimension */
+
+@media screen and (min-width: 2000px) {
+    .app__about-content_photo1 {
+        top: 0;
+    }
+    .app__about-content_photo2 {
+        bottom: -45%;
+    }
+}
+
+@media screen and (max-width: 850px) {
+    .app__about-content_photo1 {
+        width: 370px;
+        top: 0;
+    }
+    .app__about-content_photo2 {
+        width: 330px;
+        bottom: -45%;
+    }
+    .app__about-content_text {
+        width: 500px;
+        padding: 2rem 0;
+    }
+    .app__about-content_text .p__normal-text {
+        font-size: 13px;
+    }
+}
+
+@media screen and (max-width: 650px) {
+    .app__about-content_photo1 {
+        width: 300px;
+        top: 3%
+    }
+    .app__about-content_photo2 {
+        width: 250px;
+        bottom: -25%;
+        border: 5px solid var(--color-white);
+    }
+    .app__about-content_text {
+        width: 350px;
+        padding: 1rem 0;
+    }
+    .app__about-content_text .p__normal-text {
+        font-size: 12px;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .app__about-content_photo1 {
+        width: 180px;
+        top: 9%;
+    }
+    .app__about-content_photo2 {
+        width: 180px;
+        bottom: -15%;
+        border: 3px solid var(--color-white);
+    }
+    .app__about-content_text {
+        width: 300px;
+        padding: 1rem 0;
+    }
+    .app__about-content_text .p__normal-text {
+        font-size: 8px;
+    }
+}

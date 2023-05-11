@@ -5,7 +5,7 @@ import './About.css';
 
 const About = () => {
   return (
-    <div>
+    <div className='app__about_page'>
         <AboutUs />
         <Footer />
     </div>

@@ -34,6 +34,10 @@ import miyabi_gallery07 from '../assets/Miyabi_gallery07.jpg';
 import miyabi_gallery08 from '../assets/Miyabi_gallery08.png';
 import miyabi_gallery09 from '../assets/Miyabi_gallery09.JPG';
 import miyabi_gallery10 from '../assets/Miyabi_gallery10.JPG';
+import about_page_photo1 from '../assets/Aboutus_cool_fresh.jpg';
+import about_page_photo2 from '../assets/Miyabi_aboutus.JPG';
+import about_page_photo3 from '../assets/Aboutus_leaves.jpg';
+
 
 export default {
     bg,
@@ -72,4 +76,7 @@ export default {
     miyabi_gallery08,
     miyabi_gallery09,
     miyabi_gallery10,
+    about_page_photo1,
+    about_page_photo2,
+    about_page_photo3,
 };
