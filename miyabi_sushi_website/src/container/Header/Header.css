@@ -1,0 +1,63 @@
+.app__header_bg_img {
+    background-image: url(../../assets/Miyabisushi_discovery_2.jpg);
+    max-height: 100vh;
+    max-width: 100vw;
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.app__header-h1 {
+    font-family: var(--font-alt);
+    letter-spacing: 5px;
+    color: var(--color-white);
+    font-size: 26px;
+    overflow: hidden;
+    white-space: nowrap;
+    margin-top: 10px;
+    margin-bottom: 30px;
+}
+
+.app__header-h2 {
+    font-family: var(--font-base);
+    letter-spacing: 5px;
+    color: var(--color-white);
+    font-size: 20px;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.app__wrapper_info {
+    align-items: center !important;
+}
+
+.app__wrapper_info .p__dancing {
+    text-overflow: clip;
+}
+
+@media screen and (max-width: 650px) {
+    .app__header-h1 {
+        font-size: 20px;
+        letter-spacing: 2px;
+    }
+    .app__header-h2 {
+        font-size: 17px;
+        letter-spacing: 2px;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .app__header {
+        min-height: 50vh !important;
+    }
+    .app__header-h1 {
+        font-size: 15px;
+        letter-spacing: 2px;
+        margin-top: 5px;
+        margin-bottom: 15px;
+    }
+    .app__header-h2 {
+        font-size: 12px;
+        letter-spacing: 2px;
+    }
+}
