@@ -9,6 +9,7 @@ window.addEventListener('load', () => {
     // array with ten names of birds
     const birdNameList = ["Crested Auklet", "Cuban Blackbird", "Boreal Chickadee",
         "American Crow", "Carribean Dove", "Comb Duck", "Amur Falcon", "Chaffinch", "Bullfinch", "Greenfinch"
+        // Link for getting the bird names "https://7esl.com/birds-vocabulary-english/"
     ]
 
     // CREATE HTML CONTENT
@@ -19,9 +20,10 @@ window.addEventListener('load', () => {
     const nameBox = document.createElement('div');
     nameBox.classList.add('name-box');
 
-    // create text 
+    // create text
     const birdNameBox = document.createElement('h1');
     birdNameBox.classList.add('bird-name-box');
+
 
     // CREATE DISPLAY AND RUNNING FUNCTIONS
     // select the html file for determining key pressing
