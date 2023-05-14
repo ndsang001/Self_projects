@@ -22,6 +22,7 @@
     background: var(--color-white);
     min-height: 40%;
     width: 30%;
+    position: relative;
 }
 
 .ourcatering__content-border {
@@ -29,18 +30,6 @@
     -webkit-mask: var(--mask);
     mask: var(--mask);
 }
-
-
-/* .app__ourcatering-content::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-image: linear-gradient(to bottom, transparent, #000);
-    transform: skewY(-5deg);
-} */
 
 .app__ourcatering-content_header .p__dancing {
     font-size: 30px !important;

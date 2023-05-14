@@ -56,7 +56,7 @@ const Navbar = () => {
         <li className="p__montserrat"><Link to="/contact">Contact</Link></li>
       </ul>
       <div className='app__navbar-login'>
-        <a href='#login' className='p__montserrat'>LOGIN / REGISTER</a>
+        {/* <a href='#login' className='p__montserrat'>LOGIN / REGISTER</a> */}
         <div />
         <button href='#order' onClick={()=>{}} className='p__montserrat'>ONLINE ORDER</button>
 
