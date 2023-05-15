@@ -38,6 +38,7 @@ import about_page_photo1 from '../assets/Aboutus_cool_fresh.jpg';
 import about_page_photo2 from '../assets/Miyabi_aboutus.JPG';
 import about_page_photo3 from '../assets/Aboutus_leaves.jpg';
 import miyabi_closeup from '../assets/Miyabisushi_closeup_2.jpg';
+import miyabi_kiitos_gif from '../assets/Miyabi_kiitos.gif';
 
 
 export default {
@@ -81,4 +82,5 @@ export default {
     about_page_photo2,
     about_page_photo3,
     miyabi_closeup,
+    miyabi_kiitos_gif,
 };

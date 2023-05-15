@@ -1,17 +1,24 @@
+/* Adding style for Catering page */
+
 .app__catering {
     display: grid;
     grid-template-columns: 100%;
-    /* grid-template-rows: max-content max-content min-content max-content; */
     align-items: start;
     justify-content: stretch;
     grid-gap: 10px;
     background-color: var(--color-yellow);
 }
 
+
+/* adding style and position for header section */
+
 .catering__header {
     height: 150px;
     width: 0;
 }
+
+
+/* adding style and position for body section */
 
 .catering__body {
     display: grid;
@@ -21,6 +28,9 @@
     grid-template-columns: 1fr;
     box-sizing: border-box;
 }
+
+
+/* adding style and position for the introduce part of the body section */
 
 .app__catering-introduce {
     display: flex;
@@ -64,6 +74,9 @@
     color: var(--color-orange);
     font-size: 30px;
 }
+
+
+/* adding style and position for the body part of the body section */
 
 .app__catering-content {
     display: flex;
@@ -167,6 +180,9 @@
     background-color: var(--color-white);
     color: var(--color-orange);
 }
+
+
+/* The style and size for diffent screen dimension */
 
 @media screen and (max-width: 1500px) {
     .catering__alacarte-content,

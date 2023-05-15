@@ -1,0 +1,297 @@
+/* Adding style for Contact page */
+
+.app__contact {
+    background-color: var(--color-yellow);
+}
+
+
+/* Adding style and position for header section  */
+
+.contact__header {
+    height: 150px;
+    width: 0;
+}
+
+
+/* Adding style and position for body section  */
+
+.contact__body {
+    position: relative;
+    display: grid;
+    height: auto;
+    min-height: 1450px;
+    width: 100%;
+    grid-template-rows: repeat(2, min-content) 1fr;
+    grid-template-columns: 100%;
+}
+
+
+/* Adding style and position for the form design of the body section */
+
+.app__contact-form {
+    width: 620px;
+    height: auto;
+    margin-top: 40px;
+    background-color: var(--color-white);
+    justify-self: center;
+    align-self: center;
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+    box-shadow: -8.53px 9.81px 31px 0px rgba(250, 58, 0, 0.28);
+}
+
+.app__contact-form_header {
+    margin: 40px 0 29px 0;
+}
+
+.app__contact-form_header .p__dancing {
+    font-size: 30px;
+    color: var(--color-orange);
+    text-align: center;
+}
+
+.app__contact-form-content {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 35px;
+}
+
+.app__contact-form-content_intro,
+.app__contact-form-content_text {
+    flex: 1;
+    padding: 0 2rem;
+}
+
+.app__contact-form-content_intro {
+    text-align: center;
+}
+
+.app__contact-form-content .empty__div {
+    height: 350px;
+    width: 2px;
+    background-color: var(--color-orange);
+    flex-grow: 1;
+}
+
+.app__contact-form-content_text {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    row-gap: 10px;
+}
+
+.contact__form-input {
+    width: 100%;
+    text-overflow: ellipsis;
+    border: none;
+    border-bottom: 1px solid var(--color-green);
+    min-height: 30px;
+}
+
+.contact__form-input:focus {
+    background-color: var(--color-pink);
+    box-shadow: 0 0 5px #5c9ce6;
+}
+
+.contact__form-textarea {
+    border: none;
+    border-bottom: 1px solid var(--color-green);
+    overflow-y: auto;
+    resize: none;
+    min-width: 100%;
+    max-width: 100%;
+    height: 90px;
+}
+
+.contact__form-submit {
+    width: 100%;
+    padding: 1rem;
+    text-align: center;
+}
+
+.contact__form-submit_button {
+    padding: 10px 35px;
+    border: 1px solid var(--color-orange);
+}
+
+
+/* Adding style and position for the map design of the body section */
+
+.app__contact-map {
+    width: 620px;
+    height: auto;
+    justify-self: center;
+}
+
+.app__contact-map div {
+    /* assign the original position of the map*/
+    -webkit-transform-origin: 50% 0%;
+    -o-transform-origin: 50% 0%;
+    transform-origin: 50% 0%;
+    -webkit-transform: perspective(250px) rotateX(-90deg);
+    -o-transform: perspective(250px) rotateX(-90deg);
+    transform: perspective(250px) rotateX(-90deg);
+    -moz-box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.app__contact-map-content {
+    width: 100%;
+    height: 470px;
+    border: 10px solid var(--color-white);
+    box-shadow: -8.53px 9.81px 31px 0px rgba(250, 58, 0, 0.28);
+    -webkit-transition: 0.2s linear 0;
+    -o-transition: 0.2s linear 0;
+    transition: 0.2s linear 0;
+}
+
+.app__contact-map .app__contact-map-unfold {
+    /* assign the  position of the map after the animation*/
+    -webkit-transform: perspective(350px) rotateX(0deg);
+    -o-transform: perspective(350px) rotateX(0deg);
+    transform: perspective(350px) rotateX(0deg);
+    -webkit-transition: 1s linear 0s;
+    -o-transition: 1s linear 0s;
+    transition: 1s linear 0s;
+}
+
+
+/* Adding style and position for the photo design of the body section */
+
+.app__contact-photo {
+    width: 620px;
+    height: auto;
+    justify-self: center;
+    margin-bottom: 40px;
+}
+
+.app__contact-photo div {
+    /* assign the original position of the photo*/
+    -webkit-transform-origin: 50% 0%;
+    -o-transform-origin: 50% 0%;
+    transform-origin: 50% 0%;
+    -webkit-transform: perspective(250px) rotateX(-90deg);
+    -o-transform: perspective(250px) rotateX(-90deg);
+    transform: perspective(250px) rotateX(-90deg);
+    -moz-box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.app__contact-photo-box {
+    width: 100%;
+    height: 620px;
+    border: 10px solid var(--color-white);
+    box-shadow: -8.53px 9.81px 31px 0px rgba(250, 58, 0, 0.28);
+    -webkit-transition: 0.2s linear 0;
+    -o-transition: 0.2s linear 0;
+    transition: 0.2s linear 0;
+}
+
+.app__contact-photo-box img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.app__contact-photo .app__contact-photo-unfold {
+    /* assign the  position of the photo after the animation*/
+    -webkit-transform: perspective(350px) rotateX(0deg);
+    -o-transform: perspective(350px) rotateX(0deg);
+    transform: perspective(350px) rotateX(0deg);
+    -webkit-transition: 1s linear 1s;
+    -o-transition: 1s linear 1s;
+    transition: 1s linear 1s;
+}
+
+
+/* The style and size for diffent screen dimension */
+
+@media screen and (max-width:650px) {
+    .contact__header {
+        height: 100px;
+    }
+    .app__contact-form {
+        width: 450px;
+    }
+    .app__contact-form-content {
+        flex-direction: column;
+    }
+    .app__contact-form-content_intro {
+        padding: 1rem 2rem;
+    }
+    .app__contact-form-content .empty__div {
+        display: none;
+    }
+    .app__contact-form-content_text {
+        align-items: stretch;
+    }
+    .app__contact-form-content_text .p__normal-text {
+        font-size: 12px;
+    }
+    .app__contact-map {
+        width: 450px;
+    }
+    .app__contact-map-content {
+        height: 370px;
+    }
+    .app__contact-map-content iframe {
+        width: 430px;
+        height: 350px;
+    }
+    .app__contact-photo {
+        width: 450px;
+    }
+    .app__contact-photo-box {
+        height: 450px;
+    }
+}
+
+@media screen and (max-width:450px) {
+    .contact__body {
+        min-height: 1150px;
+    }
+    .app__contact-form {
+        width: 330px;
+        margin-top: 20px;
+    }
+    .app__contact-form_header {
+        margin: 20px 0 10px 0;
+    }
+    .app__contact-form_header .p__dancing {
+        font-size: 25px;
+    }
+    .app__contact-form-content {
+        flex-direction: column;
+    }
+    .app__contact-form-content_intro {
+        padding: 0.5rem 1rem;
+    }
+    .app__contact-form-content_intro .p__normal-text {
+        font-size: 12px;
+    }
+    .app__contact-form-content .empty__div {
+        display: none;
+    }
+    .app__contact-form-content_text {
+        align-items: stretch;
+    }
+    .app__contact-form-content_text .p__normal-text {
+        font-size: 10px;
+    }
+    .app__contact-map {
+        width: 330px;
+    }
+    .app__contact-map-content {
+        height: 280px;
+    }
+    .app__contact-map-content iframe {
+        width: 310px;
+        height: 260px;
+    }
+    .app__contact-photo {
+        width: 330px;
+        margin-bottom: 20px;
+    }
+    .app__contact-photo-box {
+        height: 330px;
+    }
+}
