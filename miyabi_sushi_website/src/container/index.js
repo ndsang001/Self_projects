@@ -9,6 +9,7 @@ import Laurels from './Laurels/Laurels';
 import SpecialMenu from './Menu/SpecialMenu';
 import OurProducts from './OurProducts/OurProducts'
 import OurCatering from './OurCatering/OurCatering';
+import OrderOnline from './OrderOnline/OrderOnline';
 
 export {
     AboutUs,
@@ -22,4 +23,5 @@ export {
     SpecialMenu,
     OurProducts,
     OurCatering,
+    OrderOnline,
 };
