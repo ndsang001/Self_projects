@@ -10,7 +10,7 @@
         background-color: rgba(0, 0, 0, 0.2);
         position: absolute;
         padding: 0 2rem;
-        z-index: 1;
+        z-index: 3;
     }
     /* logo position, style ,and scale */
     

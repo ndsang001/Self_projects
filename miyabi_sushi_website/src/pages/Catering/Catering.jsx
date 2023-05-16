@@ -63,7 +63,7 @@ const Catering = () => {
             </div>
           </div>
           <div className='app__catering-content-button'>
-            <a href='#contactus' className='p__normal-text'>Contact Us</a>
+            <a href='/contact' className='p__normal-text'>Contact Us</a>
           </div>
         </div>
       </section>

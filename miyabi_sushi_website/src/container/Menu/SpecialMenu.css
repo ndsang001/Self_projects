@@ -1,0 +1,145 @@
+/* Adding style for special menu component */
+
+
+/* Adding style and position for header section */
+
+.specialMenu__header {
+    height: 150px;
+    width: 0;
+}
+
+
+/* Adding style and position for body section */
+
+.specialMenu__body {
+    position: relative;
+    width: 100%;
+    height: auto;
+    min-height: 2000px;
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 100%;
+}
+
+
+/* Adding style and position for menu content box */
+
+.app__specialMenu-content {
+    justify-self: center;
+    margin: 40px 0;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: space-evenly; */
+    width: 90%;
+    height: auto;
+    background-color: var(--color-white);
+}
+
+.app__specialMenu-content-header {
+    margin: 40px 0 29px 0;
+}
+
+.app__specialMenu-content-header .p__dancing {
+    font-size: 30px;
+    color: var(--color-orange);
+    text-align: center;
+}
+
+
+/* Adding style and position for the item list */
+
+.app__specialMenu-content-list {
+    width: 90%;
+    align-self: center;
+    padding-top: 20px;
+}
+
+.specialMenu__content {
+    list-style: none;
+}
+
+.specialMenu__content-list_nigirit {
+    width: 100%;
+}
+
+.specialMenu__content .specialMenu__content_empty_div {
+    width: 100%;
+    height: 2px;
+    background-color: var(--color-green);
+}
+
+.specialMenu__content .menu__title {
+    font-size: 25px;
+    font-weight: 500;
+    margin: 20px 0;
+}
+
+.specialMenu__content-list_nigiri,
+.specialMenu__content-list_maki,
+.specialMenu__content-list_laijtelma,
+.specialMenu__content-list_food,
+.specialMenu__content-list_drink {
+    margin-top: 70px;
+}
+
+.specialMenu__content-list_nigiri li:not(:last-child),
+.specialMenu__content-list_maki li:not(:last-child),
+.specialMenu__content-list_laijtelma li:not(:last-child),
+.specialMenu__content-list_food li:not(:last-child),
+.specialMenu__content-list_drink li:not(:last-child) {
+    margin-bottom: 40px;
+}
+
+.specialMenu__content-list_nigiri li:last-child,
+.specialMenu__content-list_maki li:last-child,
+.specialMenu__content-list_laijtelma li:last-child,
+.specialMenu__content-list_food li:last-child,
+.specialMenu__content-list_drink li:last-child {
+    margin-bottom: 70px;
+}
+
+
+/* The style and size for diffent screen dimension */
+
+@media screen and (max-width: 650px) {
+    .specialMenu__header {
+        height: 100px;
+    }
+    .app__specialMenu-content-header {
+        margin: 20px 0 10px 0;
+    }
+    .app__specialMenu-content-list {
+        padding-top: 10px;
+    }
+    .specialMenu__content .menu__title {
+        font-size: 18px;
+        margin: 10px 0;
+    }
+    .specialMenu__content-list_nigiri,
+    .specialMenu__content-list_maki,
+    .specialMenu__content-list_laijtelma,
+    .specialMenu__content-list_food,
+    .specialMenu__content-list_drink {
+        margin-top: 40px;
+    }
+    .specialMenu__content-list_nigiri li:not(:last-child),
+    .specialMenu__content-list_maki li:not(:last-child),
+    .specialMenu__content-list_laijtelma li:not(:last-child),
+    .specialMenu__content-list_food li:not(:last-child),
+    .specialMenu__content-list_drink li:not(:last-child) {
+        margin-bottom: 20px;
+    }
+    .specialMenu__content-list_nigiri li:last-child,
+    .specialMenu__content-list_maki li:last-child,
+    .specialMenu__content-list_laijtelma li:last-child,
+    .specialMenu__content-list_food li:last-child,
+    .specialMenu__content-list_drink li:last-child {
+        margin-bottom: 40px;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .specialMenu__body {
+        min-height: 1800px;
+    }
+}

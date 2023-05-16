@@ -4,7 +4,7 @@ import { AboutUs, Chef, FindUs, Footer, Gallery, Header, Intro, Laurels, Special
 import { Navbar } from './components';
 import './App.css';
 import { BrowserRouter as Router, Routes, Route, BrowserRouter, Switch} from 'react-router-dom';
-import {Home, About, Catering, Contact} from './pages'
+import {Home, About, Catering, Contact, Menu} from './pages'
 
 
 const App = () => {
@@ -28,7 +28,7 @@ const App = () => {
             <Route exact path='/' element={<Home />} />
             <Route path="about" element={<About />} />
             <Route path="contact" element={<Contact />} />
-            <Route path="menu" element={<FindUs />} />
+            <Route path="menu" element={<Menu />} />
             <Route path="catering" element={<Catering />} />
             {/* <Route path="*" element={<NoPage />} /> */}
         </Routes>

@@ -20,7 +20,7 @@ const OurCatering = () => {
             </div>
         </div>
         <div className='app__ourcatering-button'>
-            <a href='#catering' className='p__normal-text'>Find out more</a>
+            <a href='/catering' className='p__normal-text'>Find out more</a>
         </div>
     </div>
   )

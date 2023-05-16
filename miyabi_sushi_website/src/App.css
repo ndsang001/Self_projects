@@ -176,6 +176,9 @@
     .section__padding {
         padding: 4rem;
     }
+    .p__normal-text {
+        font-size: 13px;
+    }
 }
 
 @media screen and (max-width: 650px) {
@@ -190,6 +193,9 @@
     }
     .p__dancing {
         font-size: 80px;
+    }
+    .p__normal-text {
+        font-size: 12px;
     }
 }
 
@@ -206,5 +212,8 @@
     }
     .p__dancing {
         font-size: 60px;
+    }
+    .p__normal-text {
+        font-size: 8px;
     }
 }

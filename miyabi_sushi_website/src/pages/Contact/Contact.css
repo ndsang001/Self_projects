@@ -41,11 +41,11 @@
     box-shadow: -8.53px 9.81px 31px 0px rgba(250, 58, 0, 0.28);
 }
 
-.app__contact-form_header {
+.app__contact-form-header {
     margin: 40px 0 29px 0;
 }
 
-.app__contact-form_header .p__dancing {
+.app__contact-form-header .p__dancing {
     font-size: 30px;
     color: var(--color-orange);
     text-align: center;
@@ -67,9 +67,9 @@
     text-align: center;
 }
 
-.app__contact-form-content .empty__div {
-    height: 350px;
-    width: 2px;
+.app__contact-form-content .contact__form_empty_div {
+    min-height: 350px;
+    max-width: 2px;
     background-color: var(--color-orange);
     flex-grow: 1;
 }
@@ -218,7 +218,7 @@
     .app__contact-form-content_intro {
         padding: 1rem 2rem;
     }
-    .app__contact-form-content .empty__div {
+    .app__contact-form-content .contact__form_empty_div {
         display: none;
     }
     .app__contact-form-content_text {
@@ -253,10 +253,10 @@
         width: 330px;
         margin-top: 20px;
     }
-    .app__contact-form_header {
+    .app__contact-form-header {
         margin: 20px 0 10px 0;
     }
-    .app__contact-form_header .p__dancing {
+    .app__contact-form-header .p__dancing {
         font-size: 25px;
     }
     .app__contact-form-content {

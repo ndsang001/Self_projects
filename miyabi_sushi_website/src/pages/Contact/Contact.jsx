@@ -50,14 +50,14 @@ const Contact = () => {
         </section>
         <section className='contact__body'>
             <div className='app__contact-form'>
-              <div className='app__contact-form_header'>
+              <div className='app__contact-form-header'>
                 <SpecialSubHeading title='Contact Us'/>
               </div>
               <div className='app__contact-form-content'>
                 <div className='app__contact-form-content_intro'>
                   <p className='p__normal-text'>We welcome queries, feedback and suggestions. We want to hear from you!</p>
                 </div>
-                <div className='empty__div'/>
+                <div className='contact__form_empty_div'/>
                 <div className='app__contact-form-content_text'>
                   
                   <div className='contact__form-firstName'>
