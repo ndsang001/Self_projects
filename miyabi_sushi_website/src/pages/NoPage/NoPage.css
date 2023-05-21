@@ -1,0 +1,6 @@
+.app__noPage img {
+    margin-top: 150px;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}

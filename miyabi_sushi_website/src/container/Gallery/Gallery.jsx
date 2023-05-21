@@ -2,7 +2,7 @@ import React from 'react';
 import {BsInstagram, BsArrowLeftShort, BsArrowRightShort} from 'react-icons/bs';
 
 import { SpecialSubHeading } from '../../components';
-import { images, data } from '../../constants';
+import { images } from '../../constants';
 import './Gallery.css';
 
 const galleryImages = [images.miyabi_gallery01, images.miyabi_gallery02, images.miyabi_gallery03, images.miyabi_gallery04, images.miyabi_gallery05,

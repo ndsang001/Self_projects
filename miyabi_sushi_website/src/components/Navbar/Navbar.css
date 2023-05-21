@@ -129,6 +129,7 @@
     .app__navbar-smallscreen_links li:hover {
         color: var(--color-white);
     }
+    /* The style and size for diffent screen dimension */
     
     @media screen and (min-width: 2000px) {
         .app__navbar-logo img {

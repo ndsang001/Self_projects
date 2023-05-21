@@ -5,6 +5,7 @@ import MenuItem from './Menuitem/MenuItem';
 import Navbar from './Navbar/Navbar';
 import SpecialSubHeading from './SpecialSubHeading/SpecialSubHeading';
 import OrderItem from './OrderItem/OrderItem';
+import SubMenuNav from './SubMenuNav/SubMenuNav';
 
 export {
     SubHeading,
@@ -14,4 +15,5 @@ export {
     Navbar,
     SpecialSubHeading,
     OrderItem,
+    SubMenuNav,
 };

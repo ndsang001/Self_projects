@@ -40,6 +40,9 @@ import about_page_photo3 from '../assets/Aboutus_leaves.jpg';
 import miyabi_closeup from '../assets/Miyabisushi_closeup_2.jpg';
 import miyabi_kiitos_gif from '../assets/Miyabi_kiitos.gif';
 import menu_page_bg from '../assets/Miyabi_menu_page_bg.jpg';
+import order_page_bg from '../assets/Miyabi_order_page_bg.jpg';
+import default_menu_img from '../assets/default_image_icon.jpg';
+import error_404 from '../assets/404_error.png';
 
 
 export default {
@@ -85,4 +88,7 @@ export default {
     miyabi_closeup,
     miyabi_kiitos_gif,
     menu_page_bg,
+    order_page_bg,
+    default_menu_img,
+    error_404,
 };
