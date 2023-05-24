@@ -10,7 +10,7 @@ import {Home, About, Catering, Contact, Menu, Order, NoPage} from './pages'
 const App = () => {
   return( 
     <BrowserRouter>
-      <div>
+      <div className='app__root'>
         <Navbar />
         <Routes>
             <Route exact path='/' element={<Home />} />

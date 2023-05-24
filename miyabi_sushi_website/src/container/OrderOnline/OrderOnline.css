@@ -63,6 +63,7 @@
     padding: 8px 16px;
     border: 1px solid var(--color-green);
     background-color: var(--color-white);
+    position: relative;
 }
 
 .app__orderOnline-content-pickup_time:hover {
@@ -91,7 +92,7 @@
 .app__orderOnline-content-subNav {
     top: 200px;
     position: sticky;
-    /* z-index: 3; */
+    z-index: 3;
 }
 
 .app__orderOnline-content-subNav_menu {
@@ -194,11 +195,33 @@
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    cursor: pointer;
 }
 
-.app__orderOnline-content-menu_cart:hover {
+.orderOnline__menu-cart_button {
+    border: none;
+    min-width: 100px;
+    white-space: nowrap;
+    overflow: hidden;
+    display: flex;
+    padding: 8px 20px;
+    cursor: pointer;
+    background-color: var(--color-green);
+    align-items: center;
+}
+
+.orderOnline__menu-cart_button:hover {
     opacity: 0.5;
+}
+
+.orderOnline__menu-cart_button .p__normal-text {
+    color: var(--color-white);
+}
+
+.orderOnline__menu-cart_quantity {
+    margin-left: 12px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
 }
 
 
@@ -242,6 +265,15 @@
     .orderOnline__menu-dropdown {
         min-width: 130px;
     }
+    .orderOnline__menu-cart_button {
+        justify-content: center;
+    }
+    .orderOnline__menu-cart_button>span {
+        display: none;
+    }
+    .orderOnline__menu-cart_quantity {
+        margin-left: 0;
+    }
 }
 
 @media screen and (max-width: 850px) {
@@ -269,6 +301,9 @@
     .app__orderOnline-content-menu_dropdown {
         padding-left: 10px;
     }
+    .orderOnline__menu-cart_button {
+        min-width: 50px;
+    }
     .orderOnline__icons {
         font-size: 20px;
     }
@@ -292,5 +327,9 @@
     }
     .app__orderOnline-content-pickup_time {
         padding: 6px 10px;
+    }
+    .orderOnline__menu-cart_button {
+        padding: 4px 10px;
+        min-width: 40px;
     }
 }

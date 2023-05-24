@@ -2,4 +2,5 @@
     background-image: url(../../assets/Miyabi_order_page_bg.jpg);
     background-repeat: no-repeat;
     background-size: cover;
+    z-index: 2;
 }

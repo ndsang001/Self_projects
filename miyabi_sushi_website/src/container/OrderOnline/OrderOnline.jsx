@@ -1,7 +1,7 @@
 import React , {useState} from 'react'
 import {IoIosArrowDropdown} from 'react-icons/io';
 import {IoCartOutline} from 'react-icons/io5';
-import { OrderItem, SpecialSubHeading, SubMenuNav } from '../../components';
+import { OrderItem, PickupOption, SpecialSubHeading, SubMenuNav, Cart } from '../../components';
 import {data} from '../../constants';
 import './OrderOnline.css';
 
@@ -13,6 +13,37 @@ const OrderOnline = () => {
     setIsOpen(!isOpen);
   };
 
+  // Define the state for storing the state of pick up option box
+  const [isOpenPickup, setIsOpenPickup] = useState(false);
+
+  const togglePickup = () => {
+    setIsOpenPickup(!isOpenPickup);
+  };
+
+  const handleClosePickup = () => {
+    setIsOpenPickup(false);
+  };
+
+  // Define cart items to store selected items
+  const [cartItems, setCartItems] = useState([]);
+
+  const addToCart = (title, quantity, price, totalPrice) =>{
+    const newItem = {
+      title: title,
+      quantity: quantity,
+      price: price,
+      totalPrice: totalPrice
+
+    };
+
+    setCartItems([...cartItems, newItem]);
+  }
+  const [isOpenCart, setIsOpenCart] = useState(false);
+
+  const toggleCart = () => {
+    setIsOpenCart(!isOpenCart);
+  }
+
   return (
     <div className='app__orderOnline'>
         <section className='orderOnline__header'/>
@@ -23,11 +54,13 @@ const OrderOnline = () => {
             </div>
             <div className='app__orderOnline-content-body'>
               <div className='app__orderOnline-content-pickup'>
-                <div className='app__orderOnline-content-pickup_time'>
+                <div className='app__orderOnline-content-pickup_time' onClick={togglePickup}>
                   <span className='p__normal-text' aria-hidden='false'>Pickup, ASAP (usually take 20 minutes) </span>
                   <button className='app__orderOnline-content-pickup_button p__normal-text'>View</button>
                 </div>
-                
+                {isOpenPickup && (
+                  <PickupOption onClose={handleClosePickup}/>
+                )}
               </div>
               <div className='app__orderOnline-content-subNav'>
                 <div className='app__orderOnline-content-subNav_menu'>
@@ -56,10 +89,23 @@ const OrderOnline = () => {
                     </div>
                     
                   </div>
-                  <div className='app__orderOnline-content-menu_cart'>
-                    <IoCartOutline color='#145365' className='orderOnline__icons'/>
-                    <span className='p__normal-text'>0</span>
+                  <div className='app__orderOnline-content-menu_cart' >
+                    
+                      <button className='orderOnline__menu-cart_button' onClick={toggleCart}>
+                        <span className='p__normal-text'>View cart</span>
+                        <div className='orderOnline__menu-cart_quantity'>
+                          <IoCartOutline color='#ffffff' className='orderOnline__icons'/>
+                          <span className='p__normal-text'>{cartItems.length}</span>
+                        </div>
+                       
+                      </button>
+                    
+                    {isOpenCart && (
+                      <Cart items={cartItems} />
+                    )}
+                    
                   </div>
+                  
                 </div>
                 
               </div>
@@ -70,7 +116,7 @@ const OrderOnline = () => {
                     <ul className='orderOnline__content-menu_nigiri'>
                       {/* Take the list from data file and print each item according to its name */}
                       {data.nigirit.map((nigiri, index)=> (
-                        <OrderItem key={nigiri.title + index} imgUrl= {nigiri.imgUrl} title={nigiri.title} price={nigiri.price} tags={nigiri.tags} />
+                        <OrderItem key={nigiri.title + index} imgUrl= {nigiri.imgUrl} title={nigiri.title} price={nigiri.price} tags={nigiri.tags} addToCart={addToCart}  />
                       ))}
                     </ul>
                   </li>
@@ -78,7 +124,7 @@ const OrderOnline = () => {
                     <h3 className='orderMenu__title p__normal-text'>Makit</h3>
                     <ul className='orderOnline__content-menu_maki'>
                       {data.makit.map((maki, index)=> (
-                        <OrderItem key={maki.title + index} imgUrl= {maki.imgUrl} title={maki.title} price={maki.price} tags={maki.tags} />
+                        <OrderItem key={maki.title + index} imgUrl= {maki.imgUrl} title={maki.title} price={maki.price} tags={maki.tags} addToCart={addToCart} />
                       ))}
                     </ul>
                   </li>
@@ -86,7 +132,7 @@ const OrderOnline = () => {
                     <h3 className='orderMenu__title p__normal-text'>Laijtelmat</h3>
                     <ul className='orderOnline__content-menu_laijtelma'>
                       {data.laijtelmat.map((laijtelma, index)=> (
-                        <OrderItem key={laijtelma.title + index} imgUrl= {laijtelma.imgUrl} title={laijtelma.title} price={laijtelma.price} tags={laijtelma.tags} />
+                        <OrderItem key={laijtelma.title + index} imgUrl= {laijtelma.imgUrl} title={laijtelma.title} price={laijtelma.price} tags={laijtelma.tags} addToCart={addToCart} />
                       ))}
                     </ul>
                   </li>
@@ -94,7 +140,7 @@ const OrderOnline = () => {
                     <h3 className='orderMenu__title p__normal-text'>Foods</h3>
                     <ul className='orderOnline__content-menu_food'>
                       {data.foods.map((food, index)=> (
-                        <OrderItem key={food.title + index} imgUrl= {food.imgUrl} title={food.title} price={food.price} tags={food.tags} />
+                        <OrderItem key={food.title + index} imgUrl= {food.imgUrl} title={food.title} price={food.price} tags={food.tags} addToCart={addToCart} />
                       ))}
                     </ul>
                   </li>
@@ -102,7 +148,7 @@ const OrderOnline = () => {
                     <h3 className='orderMenu__title p__normal-text'>Drinks</h3>
                     <ul className='orderOnline__content-menu_drink'>
                       {data.drinks.map((drink, index)=> (
-                        <OrderItem key={drink.title + index} imgUrl= {drink.imgUrl} title={drink.title} price={drink.price} tags={drink.tags} />
+                        <OrderItem key={drink.title + index} imgUrl= {drink.imgUrl} title={drink.title} price={drink.price} tags={drink.tags} addToCart={addToCart} />
                       ))}
                     </ul>
                   </li>

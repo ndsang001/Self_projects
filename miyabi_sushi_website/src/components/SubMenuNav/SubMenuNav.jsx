@@ -68,14 +68,29 @@ const SubMenuNav = () => {
     // Get section ID
     const section =  document.querySelector(sectionId);
     
+    // Get width of the screen
+    const screenWidth = window.innerWidth;
+    
     
     if(section){
-      // Get selected section position
-      const sectionPosition = section.getBoundingClientRect().top + window.pageYOffset - 280;
-      // Scroll to the selected section position
-      window.scrollTo({top: sectionPosition, behavior: 'smooth'});
-      // Update the appearance of the clicked section
-      setCurrentSection(sectionId);
+      // According to the screen max width, the section position is different
+      if(screenWidth < 450){
+        // Get selected section position
+        const sectionPosition = section.getBoundingClientRect().top + window.pageYOffset - 260;
+        // Scroll to the selected section position
+        window.scrollTo({top: sectionPosition, behavior: 'smooth'});
+        // Update the appearance of the clicked section
+        setCurrentSection(sectionId);
+      } else {
+        // Get selected section position
+        const sectionPosition = section.getBoundingClientRect().top + window.pageYOffset - 280;
+        // Scroll to the selected section position
+        window.scrollTo({top: sectionPosition, behavior: 'smooth'});
+        // Update the appearance of the clicked section
+        setCurrentSection(sectionId);
+      }
+      
+      
     }
   }
 

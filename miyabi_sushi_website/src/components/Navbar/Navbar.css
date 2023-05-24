@@ -101,7 +101,7 @@
         background: var(--color-black);
         transition: 0.5s ease;
         flex-direction: column;
-        z-index: 5;
+        z-index: 6;
     }
     
     .app__navbar-smallscreen_overlay .overlay__close {

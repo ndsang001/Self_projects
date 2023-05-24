@@ -11,8 +11,23 @@ const Navbar = () => {
   const [toggleMenu, setToggleMenu] = React.useState(false); // Switch for opening the small screen menu
   const location = useLocation(); // Checking current location (which page?) to add new class
 
+  // Handle open menu overlay in the order online page
+  const handleMenuOpen = () => { 
+    
+    setToggleMenu(!toggleMenu);
+    const test = document.querySelector('.app__orderOnline-content-subNav');
+    if(test){
+      if(!toggleMenu) {
+        test.style.display = 'none';
+      } else {
+        test.style.display = 'block';
+      }
+    }
+    
+  }
   const handleLinkClick = () => {
     setToggleMenu(false); // Close the overlay menu list when a link is clicked
+    
   };
   return (
     <nav className="app__navbar">
@@ -33,11 +48,11 @@ const Navbar = () => {
 
       </div>
       <div className='app__navbar-smallscreen'>
-        <GiHamburgerMenu color='#fff' fontSize={27} onClick={()=> setToggleMenu(true)}/>
+        <GiHamburgerMenu color='#fff' fontSize={27} onClick={handleMenuOpen}/>
 
         {toggleMenu && (
           <div  className='app__navbar-smallscreen_overlay flex__center slide_bottom'>
-            <MdOutlineRestaurantMenu fontSize={27} className="overlay__close" onClick={()=>setToggleMenu(false)} />
+            <MdOutlineRestaurantMenu fontSize={27} className="overlay__close" onClick={handleMenuOpen} />
             <ul className="app__navbar-smallscreen_links">
               <li className="p__montserrat"><Link to="/" className={`nav-link-smallscreen ${location.pathname === '/' ? 'current' : ''}`} 
               onClick={handleLinkClick}>Home</Link></li>
