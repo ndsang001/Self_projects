@@ -1,4 +1,4 @@
-import React , {useState} from 'react'
+import React , {useState, useEffect} from 'react'
 import {IoIosArrowDropdown} from 'react-icons/io';
 import {IoCartOutline} from 'react-icons/io5';
 import { OrderItem, PickupOption, SpecialSubHeading, SubMenuNav, Cart } from '../../components';
@@ -43,6 +43,17 @@ const OrderOnline = () => {
   const toggleCart = () => {
     setIsOpenCart(!isOpenCart);
   }
+
+  const handleUpdateItems = (updatedItems) => {
+    setCartItems(updatedItems);
+  }
+
+  useEffect(() => {
+    const savedCartItems = localStorage.getItem('cartItems');
+    if (savedCartItems) {
+      setCartItems(JSON.parse(savedCartItems));
+    }
+  }, []);
 
   return (
     <div className='app__orderOnline'>
@@ -101,7 +112,7 @@ const OrderOnline = () => {
                       </button>
                     
                     {isOpenCart && (
-                      <Cart items={cartItems} />
+                      <Cart items={cartItems} onClose={toggleCart} onUpdateItems={handleUpdateItems}/>
                     )}
                     
                   </div>

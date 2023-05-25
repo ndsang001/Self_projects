@@ -230,6 +230,11 @@
     color: var(--color-white);
 }
 
+.price__container-total-box {
+    display: flex;
+    justify-content: center;
+}
+
 
 /* The style and size for diffent screen dimension */
 
@@ -240,7 +245,7 @@
     }
     .app__orderitem-popup-container {
         max-width: 450px;
-        max-height: 60vh;
+        max-height: 80vh;
     }
 }
 
@@ -251,7 +256,7 @@
     }
     .app__orderitem-popup-container {
         max-width: 300px;
-        max-height: 50vh;
+        max-height: 70vh;
     }
     .orderitem__popup-icon {
         font-size: 24px;
@@ -272,11 +277,25 @@
 }
 
 @media screen and (max-width:650px) {
+    .app__orderitem-popup-container {
+        max-width: 280px;
+        max-height: 60vh;
+    }
     .orderitem__popup-icon {
         font-size: 20px;
     }
     .price__container-icon {
         font-size: 20px;
+    }
+    .orderitem__popup-container-img {
+        height: 100px;
+        min-height: 100px;
+    }
+    .orderitem__popup-container-content_title p {
+        font-size: 18px;
+    }
+    .orderitem__popup-container-content_price {
+        padding: 10px;
     }
 }
 
