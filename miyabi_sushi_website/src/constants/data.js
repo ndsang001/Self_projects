@@ -137,5 +137,5 @@ const drinks = [{
         tags: '500ml | Bottle',
     },
 ];
-
+// eslint-disable-next-line
 export default { nigirit, makit, laijtelmat, foods, drinks };

@@ -1,7 +1,7 @@
 import React from 'react';
 import {GiHamburgerMenu} from 'react-icons/gi';
 import {MdOutlineRestaurantMenu} from 'react-icons/md';
-import {BrowserRouter, Route, Link, useLocation} from 'react-router-dom';
+import {Link, useLocation} from 'react-router-dom';
 
 import images from '../../constants/images';
 import './Navbar.css';
@@ -15,12 +15,12 @@ const Navbar = () => {
   const handleMenuOpen = () => { 
     
     setToggleMenu(!toggleMenu);
-    const test = document.querySelector('.app__orderOnline-content-subNav');
-    if(test){
+    const backgroundBlock = document.querySelector('.app__orderOnline-content-subNav');
+    if(backgroundBlock){
       if(!toggleMenu) {
-        test.style.display = 'none';
+        backgroundBlock.style.display = 'none';
       } else {
-        test.style.display = 'block';
+        backgroundBlock.style.display = 'block';
       }
     }
     
@@ -35,15 +35,15 @@ const Navbar = () => {
         <img src={images.miyabi_logo} alt="app logo"/>
       </div>
       <ul className='app__navbar-links'>
-        <li className="p__montserrat"><Link to="/" className={`nav-link ${location.pathname === '/' ? 'current' : ''}`}>Home</Link></li>
-        <li className="p__montserrat"><Link to="/about" className={`nav-link ${location.pathname === '/about' ? 'current' : ''}`}>About</Link></li>
-        <li className="p__montserrat"><Link to="/menu" className={`nav-link ${location.pathname === '/menu' ? 'current' : ''}`}>Menu</Link></li>
-        <li className="p__montserrat"><Link to="/catering" className={`nav-link ${location.pathname === '/catering' ? 'current' : ''}`}>Catering</Link></li>
-        <li className="p__montserrat"><Link to="/contact" className={`nav-link ${location.pathname === '/contact' ? 'current' : ''}`}>Contact</Link></li>
+        <li className="p__header-text"><Link to="/" className={`nav-link ${location.pathname === '/' ? 'current' : ''}`}>Home</Link></li>
+        <li className="p__header-text"><Link to="/about" className={`nav-link ${location.pathname === '/about' ? 'current' : ''}`}>About</Link></li>
+        <li className="p__header-text"><Link to="/menu" className={`nav-link ${location.pathname === '/menu' ? 'current' : ''}`}>Menu</Link></li>
+        <li className="p__header-text"><Link to="/catering" className={`nav-link ${location.pathname === '/catering' ? 'current' : ''}`}>Catering</Link></li>
+        <li className="p__header-text"><Link to="/contact" className={`nav-link ${location.pathname === '/contact' ? 'current' : ''}`}>Contact</Link></li>
       </ul>
       <div className='app__navbar-login'>
         <div />
-        <Link to="/order-online"><button href='/' className='p__montserrat'>ONLINE ORDER</button></Link>
+        <Link to="/order-online"><button href='/' className='p__header-text'>ONLINE ORDER</button></Link>
         
 
       </div>
@@ -54,15 +54,15 @@ const Navbar = () => {
           <div  className='app__navbar-smallscreen_overlay flex__center slide_bottom'>
             <MdOutlineRestaurantMenu fontSize={27} className="overlay__close" onClick={handleMenuOpen} />
             <ul className="app__navbar-smallscreen_links">
-              <li className="p__montserrat"><Link to="/" className={`nav-link-smallscreen ${location.pathname === '/' ? 'current' : ''}`} 
+              <li className="p__header-text"><Link to="/" className={`nav-link-smallscreen ${location.pathname === '/' ? 'current' : ''}`} 
               onClick={handleLinkClick}>Home</Link></li>
-              <li className="p__montserrat"><Link to="/about" className={`nav-link-smallscreen ${location.pathname === '/about' ? 'current' : ''}`} 
+              <li className="p__header-text"><Link to="/about" className={`nav-link-smallscreen ${location.pathname === '/about' ? 'current' : ''}`} 
               onClick={handleLinkClick}>About</Link></li>
-              <li className="p__montserrat"><Link to="/menu" className={`nav-link-smallscreen ${location.pathname === '/menu' ? 'current' : ''}`} 
+              <li className="p__header-text"><Link to="/menu" className={`nav-link-smallscreen ${location.pathname === '/menu' ? 'current' : ''}`} 
               onClick={handleLinkClick}>Menu</Link></li>
-              <li className="p__montserrat"><Link to="/catering" className={`nav-link-smallscreen ${location.pathname === '/catering' ? 'current' : ''}`} 
+              <li className="p__header-text"><Link to="/catering" className={`nav-link-smallscreen ${location.pathname === '/catering' ? 'current' : ''}`} 
               onClick={handleLinkClick}>Catering</Link></li>
-              <li className="p__montserrat"><Link to="/contact" className={`nav-link-smallscreen ${location.pathname === '/contact' ? 'current' : ''}`} 
+              <li className="p__header-text"><Link to="/contact" className={`nav-link-smallscreen ${location.pathname === '/contact' ? 'current' : ''}`} 
               onClick={handleLinkClick}>Contact</Link></li>
             </ul>
           </div>

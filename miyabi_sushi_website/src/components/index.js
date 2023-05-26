@@ -1,6 +1,3 @@
-import SubHeading from './SubHeading/SubHeading';
-import Newsletter from './Footer/Newsletter';
-import FooterOverlay from './Footer/FooterOverlay';
 import MenuItem from './Menuitem/MenuItem';
 import Navbar from './Navbar/Navbar';
 import SpecialSubHeading from './SpecialSubHeading/SpecialSubHeading';
@@ -10,9 +7,6 @@ import PickupOption from './PickupOption/PickupOption';
 import Cart from './Cart/Cart';
 
 export {
-    SubHeading,
-    Newsletter,
-    FooterOverlay,
     MenuItem,
     Navbar,
     SpecialSubHeading,

@@ -118,6 +118,14 @@
     font-size: 15px;
 }
 
+.p__header-text {
+    font-family: var(--font-normal);
+    color: var(--color-white);
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    font-size: 20px;
+}
+
 .app__subheading_title {
     transform: rotate(-7deg);
 }
@@ -142,6 +150,10 @@
         line-height: 67px;
     }
     .p__montserrat {
+        font-size: 30px;
+        line-height: 50px;
+    }
+    .p__header-text {
         font-size: 30px;
         line-height: 50px;
     }
@@ -201,6 +213,9 @@
     .p__normal-text {
         font-size: 12px;
     }
+    .p__header-text {
+        font-size: 16px;
+    }
 }
 
 @media screen and (max-width: 450px) {
@@ -219,5 +234,8 @@
     }
     .p__normal-text {
         font-size: 8px;
+    }
+    .p__header-text {
+        font-size: 14px;
     }
 }

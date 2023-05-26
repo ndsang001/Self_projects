@@ -8,10 +8,10 @@ const AboutUs = () => (
   <div className='app__about section__padding flex__center'>
     <div className='app__about-content'>
       <div className='app__about-content_photo1'>
-        <img src={images.about_page_photo3} alt='about page photo 1' />
+        <img src={images.about_page_photo3} alt='about page 1' />
       </div>
       <div className='app__about-content_photo2'>
-        <img src={images.about_page_photo2} alt='about page photo 2' />
+        <img src={images.about_page_photo2} alt='about page 2' />
       </div>
       <div className='app__about-content_text'>
         <SpecialSubHeading title='About Us' />
