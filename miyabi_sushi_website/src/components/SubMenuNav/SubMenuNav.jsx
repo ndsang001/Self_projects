@@ -24,7 +24,7 @@ const SubMenuNav = () => {
       // Get all the sections on the page through the class name
       const sections = document.querySelectorAll('.menu__section');
 
-      // // Get the nav height (compared to the page height)
+      // Get the nav height (compared to the page height)
       // const navHeight = document.querySelector('.app__subMenuNav').offsetHeight;
       // console.log("nav height: " + navHeight);
 

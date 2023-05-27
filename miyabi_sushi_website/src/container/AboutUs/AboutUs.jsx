@@ -7,12 +7,14 @@ import './AboutUs.css';
 const AboutUs = () => (
   <div className='app__about section__padding flex__center'>
     <div className='app__about-content'>
+      {/* Photo decoration */}
       <div className='app__about-content_photo1'>
         <img src={images.about_page_photo3} alt='about page 1' />
       </div>
       <div className='app__about-content_photo2'>
         <img src={images.about_page_photo2} alt='about page 2' />
       </div>
+      {/* Information of the restaurant for visitors */}
       <div className='app__about-content_text'>
         <SpecialSubHeading title='About Us' />
         <p className='p__normal-text' >Miyabi Sushi is an eatery that specializes in Asian cuisine, featuring a unique blend of different Asian flavors. 

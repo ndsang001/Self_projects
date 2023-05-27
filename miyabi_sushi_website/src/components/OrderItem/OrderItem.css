@@ -205,6 +205,22 @@
     order: 2;
 }
 
+
+/* Hide the default arrows from input number Chrome, Safari, Edge, Opera */
+
+.price__container-quantity-number input::-webkit-outer-spin-button,
+.price__container-quantity-number input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+
+/* Hide the default arrows from input number Firefox */
+
+.price__container-quantity-number input[type=number] {
+    -moz-appearance: textfield;
+}
+
 .price__container-quantity-number input {
     text-align: center;
     width: 100%;

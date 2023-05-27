@@ -1,3 +1,5 @@
+/* Adding style and positionfor header section of home page */
+
 .app__header_bg_img {
     background-image: url(../../assets/Miyabisushi_discovery_2.jpg);
     max-height: 100vh;
@@ -16,7 +18,6 @@
     width: 100%;
     height: 100vh;
     transition: 0.5s ease;
-    /* z-index: 5; */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -70,6 +71,9 @@
         padding: 4rem 2rem;
     }
 }
+
+
+/* The style and size for diffent screen dimension */
 
 @media screen and (max-width: 450px) {
     .app__header {

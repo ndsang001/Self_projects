@@ -8,13 +8,16 @@ import './Navbar.css';
 
 const Navbar = () => {
 
+  // Define variable to store the opening state of hamburger Menu overlay screen
   const [toggleMenu, setToggleMenu] = React.useState(false); // Switch for opening the small screen menu
+  // Define variable to store the location of the current page
   const location = useLocation(); // Checking current location (which page?) to add new class
 
   // Handle open menu overlay in the order online page
   const handleMenuOpen = () => { 
     
     setToggleMenu(!toggleMenu);
+    // Hide the online order menu nav bar to not display it when the small screen overlay is open
     const backgroundBlock = document.querySelector('.app__orderOnline-content-subNav');
     if(backgroundBlock){
       if(!toggleMenu) {
@@ -25,15 +28,18 @@ const Navbar = () => {
     }
     
   }
+
   const handleLinkClick = () => {
     setToggleMenu(false); // Close the overlay menu list when a link is clicked
     
   };
+
   return (
     <nav className="app__navbar">
       <div className="app__navbar-logo">
         <img src={images.miyabi_logo} alt="app logo"/>
       </div>
+      {/* Menu nav bar in a big screen */}
       <ul className='app__navbar-links'>
         <li className="p__header-text"><Link to="/" className={`nav-link ${location.pathname === '/' ? 'current' : ''}`}>Home</Link></li>
         <li className="p__header-text"><Link to="/about" className={`nav-link ${location.pathname === '/about' ? 'current' : ''}`}>About</Link></li>
@@ -47,6 +53,7 @@ const Navbar = () => {
         
 
       </div>
+      {/* Menu nav bar in a big screen */}
       <div className='app__navbar-smallscreen'>
         <GiHamburgerMenu color='#fff' fontSize={27} onClick={handleMenuOpen}/>
 

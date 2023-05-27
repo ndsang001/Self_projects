@@ -120,19 +120,18 @@ const Contact = () => {
                     <label htmlFor='message' className='p__normal-text'>Enter your message</label>
                     <textarea className='contact__form-textarea p__normal-text' id='message' placeholder='Message' aria-required='false'/>
                   </div>
+                  {/* Send an error message when the conditions are not meet */}
                   {errorMessage && <div className='contact__form-errorMessage p__normal-text'>{errorMessage}</div>}
                   <div className='contact__form-submit'>
                     <button type='submit' className='contact__form-submit_button p__normal-text'>Submit</button>
                   </div>
-                  
                 </form>
-                
               </div>
             </div>
             {/* Ref attribute is used to assign a reference to the element */}
             <div className='app__contact-map' ref={mapContainerRef}>
               <div className='app__contact-map-content' ref={mapContainerContentRef}>
-              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1759.2857523330215!2d23.124912916258438!3d63.8358835834557!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46874892f88fb80d%3A0xb87d2988ebc51151!2sMiyabi%20Sushi!5e0!3m2!1sen!2sfi!4v1684099938753!5m2!1sen!2sfi" 
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1759.2857523330215!2d23.124912916258438!3d63.8358835834557!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46874892f88fb80d%3A0xb87d2988ebc51151!2sMiyabi%20Sushi!5e0!3m2!1sen!2sfi!4v1684099938753!5m2!1sen!2sfi" 
               width="600" height="450" style={{border:0}} allowFullScreen="" loading="lazy" referrerPolicy="no-referrer-when-downgrade" title='miyabi map location'></iframe>
               </div>
             </div>

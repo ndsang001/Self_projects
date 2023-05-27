@@ -9,12 +9,18 @@ const OrderOnline = () => {
   // Define the state for storing the state of dropdown menu
   const [isOpen, setIsOpen] = useState(false);
 
+  // Define the state for storing the state of pick up option box
+  const [isOpenPickup, setIsOpenPickup] = useState(false);
+
+  // Define cart items to store selected items
+  const [cartItems, setCartItems] = useState([]);
+
+  // Define the variable to control the ?open state of the Cart component
+  const [isOpenCart, setIsOpenCart] = useState(false);
+
   const toggleDropdown = () => {
     setIsOpen(!isOpen);
   };
-
-  // Define the state for storing the state of pick up option box
-  const [isOpenPickup, setIsOpenPickup] = useState(false);
 
   const togglePickup = () => {
     setIsOpenPickup(!isOpenPickup);
@@ -23,9 +29,6 @@ const OrderOnline = () => {
   const handleClosePickup = () => {
     setIsOpenPickup(false);
   };
-
-  // Define cart items to store selected items
-  const [cartItems, setCartItems] = useState([]);
 
   const addToCart = (title, quantity, price, totalPrice) =>{
     const newItem = {
@@ -38,19 +41,20 @@ const OrderOnline = () => {
 
     setCartItems([...cartItems, newItem]);
   }
-  const [isOpenCart, setIsOpenCart] = useState(false);
-
-  const toggleCart = () => {
-    setIsOpenCart(!isOpenCart);
-  }
 
   const handleUpdateItems = (updatedItems) => {
     setCartItems(updatedItems);
   }
 
+  const toggleCart = () => {
+    setIsOpenCart(!isOpenCart);
+  }
+
   useEffect(() => {
+    // Retrieve saved cart items from local storage
     const savedCartItems = localStorage.getItem('cartItems');
     if (savedCartItems) {
+      // Parse and set the cart items from local storage
       setCartItems(JSON.parse(savedCartItems));
     }
   }, []);
@@ -64,6 +68,7 @@ const OrderOnline = () => {
               <SpecialSubHeading title='Order Online' />
             </div>
             <div className='app__orderOnline-content-body'>
+              {/* Pick up option part */}
               <div className='app__orderOnline-content-pickup'>
                 <div className='app__orderOnline-content-pickup_time' onClick={togglePickup}>
                   <span className='p__normal-text' aria-hidden='false'>Pickup, ASAP (usually take 20 minutes) </span>
@@ -73,6 +78,7 @@ const OrderOnline = () => {
                   <PickupOption onClose={handleClosePickup}/>
                 )}
               </div>
+              {/* Order menu navigation bar */}
               <div className='app__orderOnline-content-subNav'>
                 <div className='app__orderOnline-content-subNav_menu'>
                   <div className='app__orderOnline-content-menu_dropdown'>
@@ -94,12 +100,13 @@ const OrderOnline = () => {
                     </div>
                     <div className='orderOnline__menu-empty_div' />
                   </div>
+                  {/* Render the sub menu nav bar component */}
                   <div className='app__orderOnline-content-menu_nav'>
                     <div className='orderOnline__menu-nav'>
                       <SubMenuNav />
                     </div>
-                    
                   </div>
+                  {/* Cart section of the order online page */}
                   <div className='app__orderOnline-content-menu_cart' >
                     
                       <button className='orderOnline__menu-cart_button' onClick={toggleCart}>
@@ -108,7 +115,6 @@ const OrderOnline = () => {
                           <IoCartOutline color='#ffffff' className='orderOnline__icons'/>
                           <span className='p__normal-text'>{cartItems.length}</span>
                         </div>
-                       
                       </button>
                     
                     {isOpenCart && (
@@ -116,10 +122,9 @@ const OrderOnline = () => {
                     )}
                     
                   </div>
-                  
-                </div>
-                
+                </div> 
               </div>
+              {/* Order Menu display section  */}
               <div className='app__orderOnline-content-menu'>
                 <ul className='orderOnline__content'>
                   <li className='orderOnline__content-menu_nigirit menu__section' id='subMenu-nigirit'>
@@ -134,6 +139,7 @@ const OrderOnline = () => {
                   <li className='orderOnline__content-menu_makit menu__section' id='subMenu-makit'>
                     <h3 className='orderMenu__title p__normal-text'>Makit</h3>
                     <ul className='orderOnline__content-menu_maki'>
+                      {/* Take the list from data file and print each item according to its name */}
                       {data.makit.map((maki, index)=> (
                         <OrderItem key={maki.title + index} imgUrl= {maki.imgUrl} title={maki.title} price={maki.price} tags={maki.tags} addToCart={addToCart} />
                       ))}
@@ -142,6 +148,7 @@ const OrderOnline = () => {
                   <li className='orderOnline__content-menu_laijtelmat menu__section' id='subMenu-laijtelmat'>
                     <h3 className='orderMenu__title p__normal-text'>Laijtelmat</h3>
                     <ul className='orderOnline__content-menu_laijtelma'>
+                      {/* Take the list from data file and print each item according to its name */}
                       {data.laijtelmat.map((laijtelma, index)=> (
                         <OrderItem key={laijtelma.title + index} imgUrl= {laijtelma.imgUrl} title={laijtelma.title} price={laijtelma.price} tags={laijtelma.tags} addToCart={addToCart} />
                       ))}
@@ -150,6 +157,7 @@ const OrderOnline = () => {
                   <li className='orderOnline__content-menu_foods menu__section' id='subMenu-foods'>
                     <h3 className='orderMenu__title p__normal-text'>Foods</h3>
                     <ul className='orderOnline__content-menu_food'>
+                      {/* Take the list from data file and print each item according to its name */}
                       {data.foods.map((food, index)=> (
                         <OrderItem key={food.title + index} imgUrl= {food.imgUrl} title={food.title} price={food.price} tags={food.tags} addToCart={addToCart} />
                       ))}
@@ -158,6 +166,7 @@ const OrderOnline = () => {
                   <li className='orderOnline__content-menu_drinks menu__section' id='subMenu-drinks'>
                     <h3 className='orderMenu__title p__normal-text'>Drinks</h3>
                     <ul className='orderOnline__content-menu_drink'>
+                      {/* Take the list from data file and print each item according to its name */}
                       {data.drinks.map((drink, index)=> (
                         <OrderItem key={drink.title + index} imgUrl= {drink.imgUrl} title={drink.title} price={drink.price} tags={drink.tags} addToCart={addToCart} />
                       ))}

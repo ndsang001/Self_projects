@@ -15,6 +15,7 @@ const OurProducts = () => {
             <div className='app__ourproducts_text_header'>
                 <SpecialSubHeading title='Our product' />
             </div>
+            {/* Product introduction */}
             <div className='app__ourproducts_text_content'>
                 <p className='app__ourproducts_text_content-p p__normal-text'>Welcome to Miyabi Sushi where we offer fresh sushi and delicious Asian fusion dishes. 
                 Our sushi is made with premium ingredients, while our fusion menu combines traditional flavors with modern techniques for a unique culinary experience. 

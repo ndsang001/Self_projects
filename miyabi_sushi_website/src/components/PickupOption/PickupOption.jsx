@@ -1,10 +1,14 @@
 import React from 'react';
 import {IoClose, IoAlertCircleOutline} from 'react-icons/io5';
+
 import './PickupOption.css';
+
 const PickupOption = ({onClose}) => {
+    // Function to close the Pick up pop up
     const handleClosePickup = () => {
         onClose();
     };
+
   return (
     <div className='app__pickupOption'>
         <div className='app__pickupOption-container'>
@@ -13,6 +17,7 @@ const PickupOption = ({onClose}) => {
                 <div className='app__pickupOption-container-box_header'>
                     <span className='p__normal-text'>How do you want to get your order?</span>
                 </div>
+                {/* Pick up and address information */}
                 <div className='app__pickupOption-container-box_content'>
                     <div className='pickupOption__content'>
                         <div className='pickupOption__content-location'>
@@ -29,6 +34,7 @@ const PickupOption = ({onClose}) => {
                         <p className='p__normal-text'><span><i>Only one branch and pick up option is available now!</i></span></p>
                     </div>
                 </div>
+                {/* Saving button to update the related information */}
                 <div className='app__pickupOption-container-box_buttons'>
                     <div className='pickupOption__box-buttons'>
                         <button className='pickupOption__button' onClick={handleClosePickup}><span className='p__normal-text'>Cancel</span></button>

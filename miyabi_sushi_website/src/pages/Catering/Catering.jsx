@@ -44,7 +44,7 @@ const Catering = () => {
                 <h5>
                   BUFFET
                 </h5>
-                <p className='p__normal-text'>The buffet service every day from opening time until 5:00 PM.
+                <p className='p__normal-text'><span style={{fontStyle:'italic', fontWeight:'500'}}>The buffet service every day from opening time until 5:00 PM.</span>
                 Our buffet spread features a wide range of delectable options including sushi, warm dishes, soup, salads, coffee, tea, and desserts. 
                 <br/><br/><i>We also offer a take-out option for buffet.</i>
                 </p>

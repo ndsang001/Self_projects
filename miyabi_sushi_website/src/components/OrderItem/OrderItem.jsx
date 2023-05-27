@@ -31,8 +31,11 @@ const OrderItem = ({imgUrl, title, price, tags, addToCart}) => {
 
   // Function to update the quantity change
   const handleQuantityChange = (event) => {
-    const newQuantity = event.target.value;
-    setQuantity(newQuantity);
+    const newQuantity = parseInt(event.target.value);
+    // Check if the new quantity is valid (not empty, 0, or NaN)
+    if (!isNaN(newQuantity) && newQuantity > 0) {
+      setQuantity(newQuantity);
+    }
   }
 
   // Function to open a pop up of the selected item

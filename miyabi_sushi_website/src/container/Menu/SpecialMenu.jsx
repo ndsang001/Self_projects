@@ -5,15 +5,13 @@ import './SpecialMenu.css';
 
 const SpecialMenu = () => (
   <div className='app__specialMenu'>
-    <section className='specialMenu__header'>
-    </section>
+    <section className='specialMenu__header' />
     <section className='specialMenu__body'>
       <div className='app__specialMenu-content'>
-        
         <div className='app__specialMenu-content-header'>
           <SpecialSubHeading title='Our Menu' />
         </div>
-        
+        {/* Menu list of items */}
         <div className='app__specialMenu-content-list'>
           <ul className='specialMenu__content'>
               <li className='specialMenu__content-list_nigirit'>
@@ -21,7 +19,7 @@ const SpecialMenu = () => (
                 <h3 className='menu__title p__normal-text'>Nigiri</h3>
                 <div className='specialMenu__content_empty_div'/>
                 <ul className='specialMenu__content-list_nigiri'>
-                  
+                  {/* Get data from data object */}
                   {data.nigirit.map((nigiri, index)=> (
                     <MenuItem key={nigiri.title + index} title={nigiri.title} price={nigiri.price} tags={nigiri.tags} />
                   ))}
@@ -33,6 +31,7 @@ const SpecialMenu = () => (
                 <h3 className='menu__title p__normal-text'>Maki</h3>
                 <div className='specialMenu__content_empty_div'/>
                 <ul className='specialMenu__content-list_maki'>
+                  {/* Get data from data object */}
                   {data.makit.map((maki, index)=> (
                     <MenuItem key={maki.title + index} title={maki.title} price={maki.price} tags={maki.tags} />
                   ))}
@@ -43,6 +42,7 @@ const SpecialMenu = () => (
                 <h3 className='menu__title p__normal-text'>Laijtelma</h3>
                 <div className='specialMenu__content_empty_div'/>
                 <ul className='specialMenu__content-list_laijtelma'>
+                  {/* Get data from data object */}
                   {data.laijtelmat.map((laijtelma, index)=> (
                     <MenuItem key={laijtelma.title + index} title={laijtelma.title} price={laijtelma.price} tags={laijtelma.tags} />
                   ))}
@@ -53,6 +53,7 @@ const SpecialMenu = () => (
                 <h3 className='menu__title p__normal-text'>Food</h3>
                 <div className='specialMenu__content_empty_div'/>
                 <ul className='specialMenu__content-list_food'>
+                  {/* Get data from data object */}
                   {data.foods.map((food, index)=> (
                     <MenuItem key={food.title + index} title={food.title} price={food.price} tags={food.tags} />
                   ))}
@@ -63,6 +64,7 @@ const SpecialMenu = () => (
                 <h3 className='menu__title p__normal-text'>Drinks</h3>
                 <div className='specialMenu__content_empty_div'/>
                 <ul className='specialMenu__content-list_drink'>
+                  {/* Get data from data object */}
                   {data.drinks.map((drink, index)=> (
                     <MenuItem key={drink.title + index} title={drink.title} price={drink.price} tags={drink.tags} />
                   ))}

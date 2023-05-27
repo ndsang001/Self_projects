@@ -10,9 +10,9 @@ const OurCatering = () => {
             <div className='app__ourcatering-content_header'>
                 <SpecialSubHeading title='Our Catering'/>
             </div>
+            {/* Catering introduction */}
             <div className='app__ourcatering-content_text'>
                 <p className='p__normal-text'> 
-                    
                 There are two distinct types of restaurant service: A la carte and buffet. 
                 <br/><br/>The A la carte option is available throughout the day, in accordance with the restaurant's opening hours. 
                 On the other hand, the buffet option is exclusively offered during lunchtime.
