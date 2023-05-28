@@ -48,6 +48,10 @@
     -webkit-box-orient: vertical;
 }
 
+.app__orderitem-content_title .p__normal-text {
+    font-weight: 500;
+}
+
 .app__orderitem-content_tags {
     margin: 10px 0;
     overflow: hidden;

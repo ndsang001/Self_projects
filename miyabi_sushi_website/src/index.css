@@ -2,7 +2,7 @@
 :root {
     --font-base: 'Comfortaa', sans-serif;
     --font-alt: 'Montserrat', sans-serif;
-    --font-special: 'Dancing Script';
+    --font-special: 'Dancing Script', sans-serif;
     --font-normal: 'Nunito', sans-serif;
     --color-golden: #DCCA87;
     --color-black: #0C0C0C;
@@ -12,7 +12,7 @@
     --color-white: #FFFFFF;
     --color-orange: #FD8F52;
     --color-yellow: #FFBD14;
-    --color-pink: #fff4f4;
+    /* --color-pink: #fff4f4; */
     --color-green: #145365;
     --color-pink: #FFDEEA;
 }
