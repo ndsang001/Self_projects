@@ -22,6 +22,8 @@ import menu_page_bg from '../assets/Miyabi_menu_page_bg.jpg';
 import order_page_bg from '../assets/Miyabi_order_page_bg.jpg';
 import default_menu_img from '../assets/default_image_icon.jpg';
 import error_404 from '../assets/404_error.png';
+import wolt_logo from '../assets/Wolt_partner_logo.png';
+import foodora_logo from '../assets/Foodora_partner_logo.png';
 
 /* eslint-disable import/no-anonymous-default-export */
 
@@ -50,4 +52,6 @@ export default {
     order_page_bg,
     default_menu_img,
     error_404,
+    wolt_logo,
+    foodora_logo,
 };

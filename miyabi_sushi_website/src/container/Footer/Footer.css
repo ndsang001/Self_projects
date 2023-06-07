@@ -42,10 +42,6 @@
     color: var(--color-orange);
 }
 
-.app__footer-links_work p:nth-child(2n+1) {
-    margin-bottom: 0.5rem;
-}
-
 .app__footer-links_icons {
     margin-top: 1rem;
 }
@@ -59,6 +55,19 @@
 
 .app__footer-links_icons svg:hover {
     color: var(--color-golden);
+}
+
+.app__footer-links_partners_intro {
+    margin: 1rem;
+}
+
+.app__footer-links_partners_logos>a>img {
+    width: 50px;
+    margin: 5px;
+}
+
+.app__footer-links_work p:nth-child(2n+1) {
+    margin-bottom: 0.5rem;
 }
 
 .app__footer-headtext {

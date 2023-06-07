@@ -13,8 +13,13 @@
         z-index: 3;
     }
     /* logo position, style ,and scale */
+    /* .app__navbar-logo {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+    } */
     
-    .app__navbar-logo {
+    .app__navbar-logo a {
         display: flex;
         justify-content: flex-start;
         align-items: center;

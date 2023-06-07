@@ -53,8 +53,12 @@
     margin-right: 2rem;
 }
 
-.gallery__image-icon {
+.gallery__image-icon_wrapper {
     position: absolute;
+    display: flex;
+}
+
+.gallery__image-icon {
     color: #000;
     font-size: 2rem;
     opacity: 0;

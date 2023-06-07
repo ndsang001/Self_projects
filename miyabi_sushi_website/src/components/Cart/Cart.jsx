@@ -6,7 +6,8 @@ import { AiOutlineMinus, AiOutlinePlus } from 'react-icons/ai';
 import './Cart.css';
 
 const Cart = ({items, onClose, onUpdateItems}) => {
-    //Define the cart items array to store the passed in items array from parent component (in this case is Online Order)
+    // Define the cart items array to store the passed in items array 
+    // from parent component (in this case is Online Order)
     const [cartItems, setCartItems] = useState(items);
 
     // Function to close the Cart overlay component

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {GiHamburgerMenu} from 'react-icons/gi';
 import {MdOutlineRestaurantMenu} from 'react-icons/md';
 import {Link, useLocation} from 'react-router-dom';
@@ -9,7 +9,7 @@ import './Navbar.css';
 const Navbar = () => {
 
   // Define variable to store the opening state of hamburger Menu overlay screen
-  const [toggleMenu, setToggleMenu] = React.useState(false); // Switch for opening the small screen menu
+  const [toggleMenu, setToggleMenu] = useState(false); // Switch for opening the small screen menu
   // Define variable to store the location of the current page
   const location = useLocation(); // Checking current location (which page?) to add new class
 
@@ -37,7 +37,8 @@ const Navbar = () => {
   return (
     <nav className="app__navbar">
       <div className="app__navbar-logo">
-        <img src={images.miyabi_logo} alt="app logo"/>
+        <Link to="/" ><img src={images.miyabi_logo} alt="app logo"/></Link>
+        {/* <img src={images.miyabi_logo} alt="app logo"/> */}
       </div>
       {/* Menu nav bar in a big screen */}
       <ul className='app__navbar-links'>

@@ -36,9 +36,7 @@ const OrderOnline = () => {
       quantity: quantity,
       price: price,
       totalPrice: totalPrice
-
     };
-
     setCartItems([...cartItems, newItem]);
   }
 

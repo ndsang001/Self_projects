@@ -20,8 +20,8 @@ const AboutUs = () => (
         <p className='p__normal-text' >Miyabi Sushi is an eatery that specializes in Asian cuisine, featuring a unique blend of different Asian flavors. 
         The restaurant was established in 2021 and is currently on track to becoming one of the top Asian restaurants in the area. 
         The establishment operates with the guiding principle of providing customers with exceptional dishes and service, 
-        and is always striving to enhance their offerings and improve their quality, 
-        continuously striving to be the best version of themselves by listening to customer feedback and making daily improvements.
+        and is always striving to enhance our offerings and improve our quality, 
+        continuously striving to be the best version of ourselves by listening to customer feedback and making daily improvements.
         </p>
       </div>
       
