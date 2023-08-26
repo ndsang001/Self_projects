@@ -9,7 +9,7 @@ const AboutUs = () => (
     <div className='app__about-content'>
       {/* Photo decoration */}
       <div className='app__about-content_photo1'>
-        <img src={images.about_page_photo3} alt='about page 1' />
+        <img src={images.about_page_photo4} alt='about page 1' />
       </div>
       <div className='app__about-content_photo2'>
         <img src={images.about_page_photo2} alt='about page 2' />

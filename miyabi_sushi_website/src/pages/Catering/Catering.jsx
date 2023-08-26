@@ -2,7 +2,6 @@ import React from 'react'
 
 import images from '../../constants/images';
 import { SpecialSubHeading } from '../../components'
-import { Footer } from '../../container'
 
 import './Catering.css'
 const Catering = () => {
@@ -66,9 +65,6 @@ const Catering = () => {
             <a href='/contact' className='p__normal-text'>Contact Us</a>
           </div>
         </div>
-      </section>
-      <section className='catering__footer'>
-        <Footer />
       </section>
       
     </div>

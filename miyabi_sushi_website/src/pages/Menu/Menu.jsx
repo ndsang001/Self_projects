@@ -1,11 +1,10 @@
 import React from 'react'
-import { SpecialMenu, Footer } from '../../container';
+import { SpecialMenu } from '../../container';
 import './Menu.css';
 const Menu = () => {
   return (
     <div className='app__menu'>
         <SpecialMenu />
-        <Footer />
     </div>
   )
 }

@@ -26,7 +26,7 @@ const PickupOption = ({onClose}) => {
                         </div>
                         <div className='pickupOption__content-time'>
                             <p className='p__normal-text'>Pickup time</p>
-                            <p className='p__normal-text'>ASAP (around 15 minutes)</p>
+                            <p className='p__normal-text'>ASAP (around 20 minutes)</p>
                         </div>
                     </div>
                     <div className='pickupOption__content-alert'>

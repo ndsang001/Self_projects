@@ -4,6 +4,7 @@ import './App.css';
 // eslint-disable-next-line
 import { BrowserRouter as Router,Routes, Route, BrowserRouter} from 'react-router-dom';
 import {Home, About, Catering, Contact, Menu, Order, NoPage} from './pages'
+import { Footer } from './container';
 
 
 const App = () => {
@@ -20,6 +21,7 @@ const App = () => {
             <Route path="/order-online" element={<Order />} />
             <Route path="*" element={<NoPage />} />
         </Routes>
+        <Footer />
       </div>
     
   </BrowserRouter>

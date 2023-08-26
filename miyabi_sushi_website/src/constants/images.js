@@ -16,14 +16,18 @@ import miyabi_gallery10 from '../assets/Miyabi_gallery10.JPG';
 import about_page_photo1 from '../assets/Aboutus_cool_fresh.jpg';
 import about_page_photo2 from '../assets/Miyabi_aboutus.JPG';
 import about_page_photo3 from '../assets/Aboutus_leaves.jpg';
+import about_page_photo4 from '../assets/Aboutus_1.jpg';
 import miyabi_closeup from '../assets/Miyabisushi_closeup_2.jpg';
 import miyabi_kiitos_gif from '../assets/Miyabi_kiitos.gif';
 import menu_page_bg from '../assets/Miyabi_menu_page_bg.jpg';
+import menu_page_bg_2 from '../assets/Miyabi_menu_page_bg_2.jpg';
 import order_page_bg from '../assets/Miyabi_order_page_bg.jpg';
 import default_menu_img from '../assets/default_image_icon.jpg';
 import error_404 from '../assets/404_error.png';
 import wolt_logo from '../assets/Wolt_partner_logo.png';
 import foodora_logo from '../assets/Foodora_partner_logo.png';
+import order_page_bg_2 from '../assets/order_page_bg.jpg';
+
 
 /* eslint-disable import/no-anonymous-default-export */
 
@@ -54,4 +58,7 @@ export default {
     error_404,
     wolt_logo,
     foodora_logo,
+    menu_page_bg_2,
+    order_page_bg_2,
+    about_page_photo4,
 };

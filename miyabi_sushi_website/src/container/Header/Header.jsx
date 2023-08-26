@@ -12,6 +12,7 @@ const Header = () => {
           <SpecialSubHeading title="Miyabi Sushi"/>
           <h1 className='app__header-h1'>Sushi and Asian Fusion</h1>
           <h2 className='app__header-h2'>Open Daily for Takeout & Delivery</h2>
+          <a className='app__header-button p__header-text' href='/order-online'>ONLINE ORDER</a>
         </div>
       </div>
     </div>
