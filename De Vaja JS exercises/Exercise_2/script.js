@@ -13,19 +13,19 @@ window.addEventListener('load', () => {
         const newEntry = {
             text: text,
             category: category,
-            date: formattedDate // Convert date to string format
+            date: formattedDate, // Convert date to string format
+            done: false,
+            index: questionList.length // Assign the current length as the index
         };
         questionList.push(newEntry);
     }
 
     // Function to add new question to the local storage
-    function addNewQuestion() {
+    function updateLocalStorage() {
         // Save the current array to local Storage
         localStorage.setItem('questionList', JSON.stringify(questionList));
 
     }
-
-
 
     // Example: adding new HTML element to the DOM
     const contentList = document.querySelector('.content__list-container');
@@ -34,33 +34,92 @@ window.addEventListener('load', () => {
     listItemBox.classList.add('list__container-box');
     contentList.appendChild(listItemBox);
 
-
     // Show the questions
-    questionList.forEach((question) => {
-        const itemBox = document.createElement("div");
-        itemBox.classList.add("item-container");
-        const itemQuestion = document.createElement("span");
-        itemQuestion.classList.add("item-question");
-        itemQuestion.innerHTML = question.text;
-        const itemCategory = document.createElement("span");
-        itemCategory.classList.add("item-category");
-        itemCategory.innerHTML = question.category;
-        const itemDate = document.createElement('span');
-        itemDate.classList.add("item-date");
-        itemDate.innerHTML = question.date;
-        itemBox.appendChild(itemQuestion);
-        itemBox.appendChild(itemCategory);
-        itemBox.appendChild(itemDate);
+    function showQuestion(selectedCategoryList) {
+        selectedCategoryList.forEach((question, index) => {
+            const itemContainerOuter = document.createElement("div");
+            itemContainerOuter.classList.add("item-container-outer");
 
-        // Insert the new element at the beginning of the container
-        if (listItemBox.firstChild) {
-            listItemBox.insertBefore(itemBox, listItemBox.firstChild);
-        } else {
-            listItemBox.appendChild(itemBox);
-        }
+            const itemContainer = document.createElement("div");
+            itemContainer.classList.add("item-container");
 
+            const itemQuestion = document.createElement("span");
+            itemQuestion.classList.add("item-question");
+            itemQuestion.innerHTML = question.text;
 
-    })
+            const itemCategory = document.createElement("span");
+            itemCategory.classList.add("item-category");
+            itemCategory.innerHTML = question.category;
+
+            const itemDate = document.createElement('span');
+            itemDate.classList.add("item-date");
+            itemDate.innerHTML = question.date;
+
+            const itemButtons = document.createElement("div");
+            itemButtons.classList.add("item-buttons");
+
+            // "Done" and "Undone" button 
+            const doneButton = document.createElement("button");
+            doneButton.classList.add("done-button");
+            doneButton.textContent = question.done ? "Undone" : "Done";
+            doneButton.addEventListener("click", () => {
+                if (question.done) {
+                    question.done = false;
+                    itemQuestion.style.textDecoration = "none";
+                    doneButton.textContent = "Done";
+                    doneButton.style.background = "#5cdb5c";
+                } else {
+                    question.done = true;
+                    itemQuestion.style.textDecoration = "line-through";
+                    doneButton.textContent = "Undone";
+                    doneButton.style.background = "pink";
+                }
+                updateLocalStorage();
+            })
+
+            // "Remove" button
+            const removeButton = document.createElement("button");
+            removeButton.classList.add("remove-button");
+            removeButton.textContent = "Remove";
+            removeButton.style.background = "#ff0021"
+            removeButton.addEventListener("click", () => {
+                listItemBox.removeChild(itemContainerOuter);
+                console.log("index la: " + question.index);
+                questionList.splice(question.index, 1);
+                // Update indices of the remaining items
+                questionList.forEach((question, i) => {
+                    question.index = i;
+                });
+                console.log("Question list after remove: " + JSON.stringify(questionList, null, 2));
+                updateLocalStorage();
+            })
+
+            itemContainerOuter.appendChild(itemContainer);
+            itemContainer.appendChild(itemQuestion);
+            itemContainer.appendChild(itemCategory);
+            itemContainer.appendChild(itemDate);
+            itemContainerOuter.appendChild(itemButtons);
+            itemButtons.appendChild(doneButton);
+            itemButtons.appendChild(removeButton);
+
+            // Insert the new element at the beginning of the container
+            if (listItemBox.firstChild) {
+                listItemBox.insertBefore(itemContainerOuter, listItemBox.firstChild);
+            } else {
+                listItemBox.appendChild(itemContainerOuter);
+            }
+
+            // Update styles based on question.done
+            if (question.done) {
+                itemQuestion.style.textDecoration = "line-through";
+                doneButton.style.background = "pink";
+            }
+        })
+
+    }
+
+    showQuestion(questionList);
+
 
     const selectMenu = document.querySelector('.select-menu-category');
     // console.log(selectMenu);
@@ -89,8 +148,38 @@ window.addEventListener('load', () => {
     function setCategory(category) {
         const clickedCategory = category.target;
         selectMenuID.innerHTML = clickedCategory.textContent;
+        // const selectedCategoryList = questionList.filter(item => item.category == clickedCategory.textContent).reduce((result, item) => {
+        //     const { category } = item;
+        //     if (!result[category]) {
+        //         result[category] = [];
+        //     }
+        //     result[category].push(item);
+        //     return result;
+
+        // }, {});
+        const selectedCategoryList = questionList.filter(item => item.category == clickedCategory.textContent).map(item => ({
+            text: item.text,
+            category: item.category,
+            date: item.date, // Convert date to string format
+            done: item.done,
+            index: item.index
+        }));
+        console.log(selectedCategoryList);
+        const itemContainerOuter = document.querySelectorAll(".item-container-outer");
+        console.log(itemContainerOuter);
+        itemContainerOuter.forEach(item => {
+            listItemBox.removeChild(item);
+        })
+        if (clickedCategory.textContent == "ALL") {
+            showQuestion(questionList);
+        } else {
+            showQuestion(selectedCategoryList)
+        }
+
         handleMenuClick();
     }
+
+
 
     // Add event listener "click" to ADD button
     const addButton = document.getElementById("addButton");
@@ -117,13 +206,13 @@ window.addEventListener('load', () => {
         }
 
         addToList(questionContent, selectedCategory.value);
-        addNewQuestion();
+        updateLocalStorage();
 
         popupForm.reset();
     })
 
-    const list = localStorage.getItem('questionList');
-    console.log(JSON.parse(list));
+    // const list = localStorage.getItem('questionList');
+    // console.log(JSON.parse(list));
 
     // Choose category
     let selectedCategory = null; // To track the currently selected category
