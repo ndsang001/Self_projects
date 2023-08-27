@@ -4,7 +4,7 @@
 }
 
 .header-box {
-    min-width: 40vh;
+    min-width: 40vw;
     min-height: 25vh;
     display: flex;
     justify-content: center;
