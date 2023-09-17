@@ -152,12 +152,42 @@ html {
 }
 
 .saved-emoji-items {
-    display: flex;
+    /* display: flex;
     flex-direction: row;
     justify-content: center;
-    align-items: center;
+    align-items: center; */
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 10px;
 }
 
 .saved-emoji-item {
-    margin: 20px;
+    /* margin: 20px; */
+    padding: 10px;
+}
+
+.led-board-button {
+    border: 1px solid black;
+    background-color: red;
+    cursor: pointer;
+    border-radius: 5% 5%;
+}
+
+.led-board-button:hover {
+    opacity: 0.8;
+}
+
+.led-board-name-container {
+    display: flex;
+    align-items: center;
+}
+
+.led-board-emoji-name {
+    flex: 1;
+    /* Take up available space, pushing the button to the end */
+}
+
+.led-board-button-container {
+    display: flex;
+    align-items: center;
 }

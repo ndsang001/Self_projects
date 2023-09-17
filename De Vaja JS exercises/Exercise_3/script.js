@@ -1,6 +1,31 @@
+// Import the functions you need from the SDKs you need
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.4.0/firebase-app.js";
+// TODO: Add SDKs for Firebase products that you want to use
+// https://firebase.google.com/docs/web/setup#available-libraries
+
+// Your web app's Firebase configuration
+const firebaseConfig = {
+    apiKey: "AIzaSyCnIA_6nU3VmzihocrjzkTGbzdziviDoJM",
+    authDomain: "de-vaja---emoji-generato-80227.firebaseapp.com",
+    databaseURL: "https://de-vaja---emoji-generato-80227-default-rtdb.europe-west1.firebasedatabase.app",
+    projectId: "de-vaja---emoji-generato-80227",
+    storageBucket: "de-vaja---emoji-generato-80227.appspot.com",
+    messagingSenderId: "997725036693",
+    appId: "1:997725036693:web:9cd83c009a9f09c1f13b9c"
+};
+
+// Initialize Firebase
+firebase.initializeApp(firebaseConfig);
+
+// Reference to database
+var emojiListDB = firebase.database().ref('promptNameForm');
+
+
+
 window.addEventListener('load', () => {
     // Database list
     let emojiList = JSON.parse(localStorage.getItem('emojiList')) || [];
+
     //create virtual led board elements
     const canvasBox = document.createElement("div");
     canvasBox.classList.add("virtual-board-container");
@@ -82,8 +107,9 @@ window.addEventListener('load', () => {
     const overlayBackground = document.createElement('div');
     overlayBackground.classList.add('overlay-background');
     // Promt container
-    const promtNameContainer = document.createElement('form');
-    promtNameContainer.classList.add('promt-name-container');
+    const promptNameContainer = document.createElement('form');
+    promptNameContainer.classList.add('promt-name-container');
+    promptNameContainer.setAttribute('id', 'promptNameForm');
     // Promt header
     const inputLabel = document.createElement('label');
     inputLabel.classList.add('input-label');
@@ -109,10 +135,10 @@ window.addEventListener('load', () => {
 
     overlayButtons.appendChild(doneButton);
     overlayButtons.appendChild(cancelButton);
-    promtNameContainer.appendChild(inputLabel);
-    promtNameContainer.appendChild(emojiNameInput);
-    promtNameContainer.appendChild(overlayButtons);
-    overlayBackground.appendChild(promtNameContainer);
+    promptNameContainer.appendChild(inputLabel);
+    promptNameContainer.appendChild(emojiNameInput);
+    promptNameContainer.appendChild(overlayButtons);
+    overlayBackground.appendChild(promptNameContainer);
     saveButtonOverlay.appendChild(overlayBackground);
     buttonContainer.appendChild(saveButtonOverlay);
 
@@ -127,7 +153,7 @@ window.addEventListener('load', () => {
     cancelButton.addEventListener('click', toggleSaveScreen);
 
     // Handle submit
-    promtNameContainer.addEventListener('submit', function(event) {
+    promptNameContainer.addEventListener('submit', function(event) {
         console.log(emojiNameInput.value);
         if (!emojiNameInput.value) {
             event.preventDefault();
@@ -139,17 +165,29 @@ window.addEventListener('load', () => {
         console.log(emojiConfig);
         addNewEmoji(emojiNameInput.value, emojiConfig);
         updateLocalStorage();
+        printSavedEmoji(emojiList[emojiList.length - 1]);
         console.log(emojiList);
-        event.preventDefault();
-        // promtNameContainer.reset();
+        // event.preventDefault();
+        saveNewEmoji(emojiNameInput.value, emojiConfig);
+        promptNameContainer.reset();
 
     })
+
+    // Save new emoji to the database
+    const saveNewEmoji = (emojiName, emojiConfig) => {
+        var newEmoji = emojiListDB.push;
+        newEmoji.set({
+            emojiName: emojiName,
+            emojiConfig: emojiConfig
+        });
+    };
 
     // Add new item into the emoji list
     const addNewEmoji = (name, emojiConfig) => {
         const newEntry = {
             emojiName: name,
-            emojiConfig: emojiConfig
+            emojiConfig: emojiConfig,
+            index: emojiList.length // Assign the current length as the index
         }
         emojiList.push(newEntry);
     };
@@ -194,8 +232,9 @@ window.addEventListener('load', () => {
     contentSavedEmoji.appendChild(savedEmojiList);
 
     console.log(emojiList);
-    printSavedEmoji(emojiList[0]);
-    printSavedEmoji(emojiList[1]);
+    emojiList.forEach((emoji) => {
+        printSavedEmoji(emoji);
+    })
 
     function printSavedEmoji(savedEmoji) {
         const savedEmojiItem = document.createElement('div');
@@ -203,7 +242,18 @@ window.addEventListener('load', () => {
         const emojiNameTemp = savedEmoji.emojiName;
         const canvasBoardTemp = document.createElement("div");
         canvasBoardTemp.classList.add('led-board-' + emojiNameTemp);
+        const ledBoardNameContainer = document.createElement("div");
+        ledBoardNameContainer.classList.add('led-board-name-container');
+        const ledboardEmojiName = document.createElement('h4');
+        ledboardEmojiName.classList.add('led-board-emoji-name');
+        ledboardEmojiName.textContent = emojiNameTemp;
+        const ledBoardButtonContainer = document.createElement('div');
+        ledBoardButtonContainer.classList.add('led-board-button-container');
+        const ledBoardButton = document.createElement('button');
+        ledBoardButton.classList.add('led-board-button');
+        ledBoardButton.textContent = "Remove";
         let indexTemp = 0;
+
         for (let i = 0; i < 8; i++) {
             const canvasRowTemp = document.createElement("div");
             canvasRowTemp.classList.add('led-board-row-' + emojiNameTemp);
@@ -229,13 +279,23 @@ window.addEventListener('load', () => {
             }
             canvasBoardTemp.appendChild(canvasRowTemp);
         }
-        savedEmojiItems.appendChild(savedEmojiItem);
+        ledBoardButtonContainer.appendChild(ledBoardButton);
+        ledBoardNameContainer.appendChild(ledboardEmojiName);
+        ledBoardNameContainer.appendChild(ledBoardButtonContainer);
         savedEmojiItem.appendChild(canvasBoardTemp);
+        savedEmojiItem.appendChild(ledBoardNameContainer);
+        savedEmojiItems.appendChild(savedEmojiItem);
 
+        ledBoardButton.addEventListener('click', () => {
+            savedEmojiItems.removeChild(savedEmojiItem);
+            console.log(savedEmoji.index);
+            emojiList.splice(savedEmoji.index, 1);
+            // Update indices of the remaining items
+            emojiList.forEach((emoji, i) => {
+                emoji.index = i;
+            });
 
+            updateLocalStorage();
+        })
     }
-
-
-
-
 })
