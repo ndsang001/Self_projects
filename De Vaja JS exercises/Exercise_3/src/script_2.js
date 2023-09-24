@@ -26,7 +26,52 @@ console.log(emojiListDB);
 
 window.addEventListener('load', () => {
     // Database list
-    let emojiList = JSON.parse(localStorage.getItem('emojiList')) || [];
+
+    // const db = getDatabase(firebaseConfig); // Get the database reference
+    // let emojiListRef = ref(db, 'emojis');
+
+    let emojiList = [];
+
+    // Retrieve the data
+    // get(emojiListRef)
+    //     .then((snapshot) => {
+    //         if (snapshot.exists()) {
+    //             const data = snapshot.val();
+
+    //             emojiList = data;
+    //             console.log('Data from Firebase:', emojiList);
+    //         } else {
+    //             console.log('No data available');
+    //         }
+    //     })
+    //     .catch((error) => {
+    //         console.error('Error getting data:', error);
+    //     });
+
+
+    function fetchUpdatedData() {
+        const database = getDatabase(firebaseConfig);
+        const emojiRef = ref(database, 'emojis');
+
+        get(emojiRef)
+            .then((snapshot) => {
+                if (snapshot.exists()) {
+                    const data = snapshot.val();
+                    emojiList = Object.values(data); // Update the local array with the updated data
+                    console.log('Updated data from Firebase:', emojiList);
+                    printSavedEmojis();
+                } else {
+                    console.log('No data available');
+                }
+            })
+            .catch((error) => {
+                console.error('Error getting updated data:', error);
+            });
+    }
+
+    fetchUpdatedData();
+
+
 
     //create virtual led board elements
     const canvasBox = document.createElement("div");
@@ -170,8 +215,8 @@ window.addEventListener('load', () => {
 
         const emojiConfig = getEmojiConfiguration();
         console.log(emojiConfig);
-        addNewEmoji(emojiNameInput.value, emojiConfig);
-        updateLocalStorage();
+        addNewEmoji(replaceSpacesWithHyphens(emojiNameInput.value), emojiConfig);
+        // updateLocalStorage();
         printSavedEmoji(emojiList[emojiList.length - 1]);
         console.log(emojiList);
 
@@ -185,7 +230,7 @@ window.addEventListener('load', () => {
 
     // Save new emoji to the database
     const saveNewEmoji = (emojiName, emojiConfig) => {
-        const db = getDatabase(firebaseConfig); // Get the database reference
+        const db = getDatabase(firebaseConfig);
         const newEmojiRef = ref(db, 'emojis/' + emojiName); // Create a reference to the new emoji
 
         // Set the emoji data
@@ -212,11 +257,11 @@ window.addEventListener('load', () => {
         emojiList.push(newEntry);
     };
 
-    // Update local storage
-    function updateLocalStorage() {
-        // Save current emoji list to local storage
-        localStorage.setItem('emojiList', JSON.stringify(emojiList));
-    }
+    // // Update local storage
+    // function updateLocalStorage() {
+    //     // Save current emoji list to local storage
+    //     localStorage.setItem('emojiList', JSON.stringify(emojiList));
+    // }
 
     // Save new emoji to database
     function saveNewEmojiConfiguration(configuration) {
@@ -251,10 +296,21 @@ window.addEventListener('load', () => {
 
     contentSavedEmoji.appendChild(savedEmojiList);
 
+
     console.log(emojiList);
-    emojiList.forEach((emoji) => {
-        printSavedEmoji(emoji);
-    })
+
+    function printSavedEmojis() {
+        // // Clear existing saved emojis if any
+        // // Assuming you have an HTML element with ID 'saved-emojis-container'
+        // const savedEmojisContainer = document.getElementById('saved-emojis-container');
+        // savedEmojisContainer.innerHTML = '';
+
+        emojiList.forEach((emoji) => {
+            printSavedEmoji(emoji);
+        })
+    }
+
+
 
     function printSavedEmoji(savedEmoji) {
         const savedEmojiItem = document.createElement('div');
