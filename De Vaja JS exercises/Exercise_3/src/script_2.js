@@ -1,5 +1,5 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.4.0/firebase-app.js";
-import { getDatabase, get, ref, set, child } from "https://www.gstatic.com/firebasejs/10.4.0/firebase-database.js";
+import { getDatabase, get, ref, set, remove } from "https://www.gstatic.com/firebasejs/10.4.0/firebase-database.js";
 // import { firebase } from "https://cdnjs.cloudflare.com/ajax/libs/firebase/7.14.1-0/firebase.js";
 
 // import { initializeApp } from 'firebase/app';
@@ -215,17 +215,31 @@ window.addEventListener('load', () => {
 
         const emojiConfig = getEmojiConfiguration();
         console.log(emojiConfig);
-        addNewEmoji(replaceSpacesWithHyphens(emojiNameInput.value), emojiConfig);
-        // updateLocalStorage();
-        printSavedEmoji(emojiList[emojiList.length - 1]);
-        console.log(emojiList);
-
         const emojiNameTemp = replaceSpacesWithHyphens(emojiNameInput.value);
-        saveNewEmoji(emojiNameTemp, emojiConfig);
+        let savingFactorCondition = false;
+        for (let i = 0; i < emojiList.length; i++) {
+            if (emojiNameTemp == emojiList[i].emojiName) {
+                savingFactorCondition = true;
+                break;
+            }
+        }
 
-        promptNameContainer.reset();
-        fillColours(ledCell);
-        toggleSaveScreen() // Close the prompt name name screen
+        if (savingFactorCondition == true) {
+            alert("This name has been already used. Please choose an other name");
+            return;
+        } else {
+            addNewEmoji(emojiNameTemp, emojiConfig);
+            printSavedEmoji(emojiList[emojiList.length - 1]);
+            console.log(emojiList);
+
+
+            saveNewEmoji(emojiNameTemp, emojiConfig);
+
+            promptNameContainer.reset();
+            fillColours(ledCell);
+            toggleSaveScreen() // Close the prompt name name screen
+        }
+
     })
 
     // Save new emoji to the database
@@ -374,8 +388,22 @@ window.addEventListener('load', () => {
                 emoji.index = i;
             });
 
-            updateLocalStorage();
+            deleteEmojiFromDatabase(savedEmoji.emojiName);
         })
+
+
+    }
+
+    function deleteEmojiFromDatabase(emojiName) {
+
+        const emojiRef = ref(getDatabase(firebaseConfig), 'emojis/' + emojiName);
+        remove(emojiRef)
+            .then(() => {
+                console.log('Emoji deleted successfully from the database');
+            })
+            .catch((error) => {
+                console.error('Error deleting emoji from the database:', error);
+            });
     }
 
     function replaceSpacesWithHyphens(str) {
