@@ -162,7 +162,7 @@ html {
 }
 
 .saved-emoji-item {
-    /* margin: 20px; */
+    margin: 20px;
     padding: 10px;
 }
 
@@ -180,6 +180,7 @@ html {
 .led-board-name-container {
     display: flex;
     align-items: center;
+    max-width: 160px;
 }
 
 .led-board-emoji-name {
@@ -190,4 +191,10 @@ html {
 .led-board-button-container {
     display: flex;
     align-items: center;
+}
+
+@media screen and (max-width: 700px) {
+    .saved-emoji-items {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
