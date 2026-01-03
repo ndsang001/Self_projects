@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Exercise 2</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="main">
+        <div class="header">
+            <header class="header-box">
+                <h1>De Vaja JS Exercise 2</h1>
+                <h3>By Sang Nguyen</h3>
+            </header>
+        </div>
+        <div class="content">
+            <div class="content__header">
+                <div class="content__list-name">
+                    <h2>The Guru question list</h2>
+                </div>
+                <div class="content__navigation">
+                    <div class="add-button">
+                        <button id="addButton">ADD</button>
+                        <!-- Overlay pop-up for entering new item -->
+                        <div class="add-popup-overlay">
+                            <div class="popup-container-overlay">
+                                <form class="popup-box-overlay">
+                                    <label htmlFor='question' class='popup-question-label'>Enter your question:</label>
+                                    <textarea class="popup-question-textarea" placeholder="Question in your mind?" rows="10" cols="25" aria-required="true"></textarea>
+                                    <label htmlFor='category' class='popup-category-label'>Choose category</label>
+                                    <div class="popup-category-menu">
+                                        <input class="popup-category-input" type="button" value="HTML" id="html" />
+                                        <input class="popup-category-input" type="button" value="CSS" id="css" />
+                                        <input class="popup-category-input" type="button" value="JS" id="js" />
+                                    </div>
+
+                                    <div class=" question-popup-buttons">
+                                        <button id="saveButton" class="question-popup-button" type="submit">SAVE</button>
+                                        <button id="cancelButton" class="question-popup-button" type="button">CANCEL</button>
+                                    </div>
+                                </form>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="select-menu">
+                        <p><b>Categories</b></p>
+                        <button id="selectMenuButton" class="select-menu-category">ALL</button>
+                        <!-- Overlay menu drop -->
+                        <div class="select-menu-overlay">
+                            <div class="select-menu-categories-overlay">
+                                <button class="menu-category">ALL</button>
+                                <button class="menu-category">HTML</button>
+                                <button class="menu-category">CSS</button>
+                                <button class="menu-category">JS</button>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="content__list-container">
+            </div>
+        </div>
+
+    </div>
+    <script src="script.js "></script>
+</body>
+
+</html>

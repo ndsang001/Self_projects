@@ -1,0 +1,193 @@
+html {
+    scroll-behavior: smooth;
+}
+
+* {
+    margin: auto;
+    box-sizing: border-box;
+}
+
+.header-box {
+    min-width: 40vw;
+    min-height: 25vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+    border-bottom: 1px solid black;
+}
+
+.header-box>h1 {
+    margin-bottom: 20px;
+}
+
+.header-box>h3 {
+    margin-top: 10px;
+}
+
+.content {
+    width: auto;
+    min-height: 500px;
+    /* height: 500px; */
+}
+
+.content__header {
+    display: flex;
+}
+
+.content__header-name {
+    margin-top: 40px;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px dashed black;
+}
+
+.content__container {
+    display: flex;
+    flex-direction: column;
+}
+
+.led-board-row {
+    height: 50px;
+}
+
+.led-cell {
+    width: 50px;
+    height: 50px;
+    border: 0.1px solid black;
+    cursor: pointer;
+}
+
+.virtual-board-space {
+    height: 40px;
+    border-bottom: 1px solid black;
+}
+
+.virtual-board-button {
+    display: flex;
+    margin-top: 40px;
+    flex-direction: column;
+}
+
+.save-button {
+    background-color: #0275d8;
+    border: 1px solid black;
+    width: 70px;
+    height: 40px;
+    border-radius: 5% 5%;
+    color: white;
+    cursor: pointer;
+}
+
+.save-overlay-container {
+    display: none;
+}
+
+.overlay-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+}
+
+.show-save-overlay {
+    display: block;
+}
+
+.promt-name-container {
+    background-color: white;
+    width: 300px;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+}
+
+.emoji-name-input {
+    height: 50px;
+    font-size: 20px;
+}
+
+.overlay-buttons {
+    display: flex;
+    flex-direction: row;
+}
+
+.done-button,
+.cancel-button {
+    width: 70px;
+    height: 30px;
+    text-align: center;
+    cursor: pointer;
+    border: 1px solid black;
+    border-radius: 5% 5%;
+}
+
+.done-button {
+    background-color: #3bce24;
+    margin-right: 20px;
+}
+
+.done-button:hover {
+    opacity: 0.8;
+}
+
+.cancel-button {
+    background-color: red;
+}
+
+.cancel-button:hover {
+    opacity: 0.8;
+}
+
+.saved-emoji-container {
+    margin-top: 50px;
+}
+
+.saved-emoji-items {
+    /* display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center; */
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 10px;
+}
+
+.saved-emoji-item {
+    /* margin: 20px; */
+    padding: 10px;
+}
+
+.led-board-button {
+    border: 1px solid black;
+    background-color: red;
+    cursor: pointer;
+    border-radius: 5% 5%;
+}
+
+.led-board-button:hover {
+    opacity: 0.8;
+}
+
+.led-board-name-container {
+    display: flex;
+    align-items: center;
+}
+
+.led-board-emoji-name {
+    flex: 1;
+    /* Take up available space, pushing the button to the end */
+}
+
+.led-board-button-container {
+    display: flex;
+    align-items: center;
+}

@@ -1,0 +1,41 @@
+* {
+    margin: auto;
+    box-sizing: border-box;
+}
+
+.display-box {
+    border-style: dashed;
+    border-width: 10px;
+}
+
+.header-box {
+    min-width: 40vh;
+    min-height: 25vh;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+    border-bottom: solid black;
+}
+
+.header-box h1 {
+    margin-bottom: 20px;
+}
+
+.header-box h3 {
+    margin-top: 10px;
+}
+
+.name-box {
+    height: 75vh;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+}
+
+.bird-name-box {
+    width: 30vw;
+    height: 30vh;
+    padding: 13vh 0;
+    border: solid red;
+}
